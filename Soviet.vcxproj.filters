@@ -8,6 +8,9 @@
     <ClCompile Include="Reader.cpp">
       <Filter>Reader</Filter>
     </ClCompile>
+    <ClCompile Include="lexer.cpp">
+      <Filter>Parser\Lexer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Parser">
@@ -16,16 +19,22 @@
     <Filter Include="Reader">
       <UniqueIdentifier>{4d7cd69d-7ee7-49a5-a047-808971a6c6fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Parser\Lexer">
+      <UniqueIdentifier>{2ab29582-86ab-4521-8bb0-fd3c12bf2e25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Parser.hpp">
       <Filter>Parser</Filter>
     </ClInclude>
-    <ClInclude Include="lexertk.hpp">
-      <Filter>Parser</Filter>
-    </ClInclude>
     <ClInclude Include="Reader.hpp">
       <Filter>Reader</Filter>
+    </ClInclude>
+    <ClInclude Include="lexertk.hpp">
+      <Filter>Parser\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="lexer.hpp">
+      <Filter>Parser\Lexer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

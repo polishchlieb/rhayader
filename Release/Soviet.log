@@ -1,7 +1,8 @@
-﻿  Parser.cpp
+﻿  index.cpp
+  lexer.cpp
   Trwa generowanie kodu
-  23 of 657 functions ( 3.5%) were compiled, the rest were copied from previous compilation.
-    14 functions were new in current compilation
-    17 functions had inline decision re-evaluated but remain unchanged
+  4 of 326 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   Soviet.vcxproj -> E:\projekty\Soviet\Soviet\Release\Soviet.exe

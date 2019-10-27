@@ -1,5 +1,12 @@
-x = 10
-blyat = 'Hell world'
-test = true
+int x = 10
 
-variables
+string blyat = 'Hell world'
+blyat = 'Hello world'
+
+const int y = 20
+
+func int add(int a, int b) -> a + b
+
+func int substract(int a, int b) {
+    return a - b
+}
