@@ -133,9 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lexer.hpp" />
-    <ClInclude Include="lexertk.hpp" />
     <ClInclude Include="Parser.hpp" />
     <ClInclude Include="Reader.hpp" />
+    <ClInclude Include="Token.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,7 +15,6 @@ std::vector<Token> Lexer::lex(const std::string line) {
 
 		if (c == '\'' || c == '"') {
 			if (current.type == string) {
-				current.value += c;
 				tokens.push_back(current);
 				current.type = none;
 				current.value = "";
@@ -25,7 +24,7 @@ std::vector<Token> Lexer::lex(const std::string line) {
 					tokens.push_back(current);
 
 				current.type = string;
-				current.value = c;
+				current.value = "";
 				continue;
 			}
 		}

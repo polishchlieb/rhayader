@@ -1,6 +1,8 @@
 #include "Reader.hpp"
-/* #include "Parser.hpp" */
+#include "Parser.hpp"
 #include "lexer.hpp"
+
+#include <time.h>
 
 int main(int argc, char** argv) {
 	std::vector<std::string> arguments;
@@ -13,14 +15,14 @@ int main(int argc, char** argv) {
 		exit(0);
 	}
 
-	Reader r(arguments[1]); // Parser p;
+	Reader r(arguments[1]); Parser p;
 	for (std::string line : r.lines) {
-		// p.parseLine(line);
-		auto tokens = Lexer::lex(line);
-		for (auto token : tokens) {
+		std::vector<Token> tokens = Lexer::lex(line);
+		/* for (auto token : tokens) {
 			std::cout << token.value << ":" << token.type << " ";
 		}
-		std::cout << ";" << std::endl;
+		std::cout << std::endl; */
+		p.parseLine(tokens);
 	}
 
 	r.close();

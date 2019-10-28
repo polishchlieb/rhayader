@@ -3,6 +3,8 @@
 #include <any>
 #include <string>
 #include <iostream>
+#include <algorithm>
+#include "Token.hpp"
 
 struct Variable {
 	std::string name;
@@ -13,7 +15,7 @@ struct Variable {
 class Parser {
 public:
 	~Parser();
-	void parseLine(std::string line);
+	void parseLine(const std::vector<Token> tokens);
 
 private:
 	std::vector<Variable> variables;
