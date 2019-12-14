@@ -1,0 +1,16 @@
+import math
+
+class Circle {
+    static const float pi = math.pi
+
+    func Circle(public float radius)
+    func Circle(float diameter) {
+        radius = diameter / 2
+    }
+
+    func int get area() -> pi * radius ^ 2
+    func int get circumference() -> 2 * pi * radius
+}
+
+var c = Circle(10)
+println(c.area())

@@ -127,12 +127,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="index.cpp" />
-    <ClCompile Include="lexer.cpp" />
+    <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Reader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lexer.hpp" />
+    <ClInclude Include="Lexer.hpp" />
     <ClInclude Include="Parser.hpp" />
     <ClInclude Include="Reader.hpp" />
     <ClInclude Include="Token.hpp" />

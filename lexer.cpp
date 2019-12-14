@@ -19,7 +19,8 @@ std::vector<Token> Lexer::lex(const std::string line) {
 				current.type = none;
 				current.value = "";
 				continue;
-			} else {
+			}
+			else {
 				if (current.type != none)
 					tokens.push_back(current);
 
@@ -42,7 +43,7 @@ std::vector<Token> Lexer::lex(const std::string line) {
 			current.value = "";
 			continue;
 		}
-		
+
 		if (type != current.type && current.type != none) {
 			tokens.push_back(current);
 			current.type = type;

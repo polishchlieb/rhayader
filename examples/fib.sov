@@ -1,0 +1,17 @@
+func int[] fib(int count) {
+    int a = 0
+    int b = 1
+    int[] numbers // default value is []
+
+    while a < n {
+        numbers.push(a)
+        a = b
+        b = a + b
+    }
+
+    return numbers
+}
+
+for num : fib(100) {
+    println(num)
+}

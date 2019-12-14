@@ -18,11 +18,11 @@ int main(int argc, char** argv) {
 	Reader r(arguments[1]); Parser p;
 	for (std::string line : r.lines) {
 		std::vector<Token> tokens = Lexer::lex(line);
-		/* for (auto token : tokens) {
+		for (auto token : tokens) {
 			std::cout << token.value << ":" << token.type << " ";
 		}
-		std::cout << std::endl; */
-		p.parseLine(tokens);
+		std::cout << std::endl;
+		p.parse(tokens);
 	}
 
 	r.close();

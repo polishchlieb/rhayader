@@ -1,0 +1,20 @@
+// Reference in Soviet is a variable that holds a memory address
+// Its type can be either declared or any:
+// var& / int&
+
+// Declare some constants (or not)
+int number = 10
+string str = 'hello world'
+
+// Let's start with a normal example
+int& reference = &number
+number = 12
+print(reference) // 12
+
+// Note: the type of ref1 is not registered at the time of
+// declaration, that means that var& can "change its type"
+var& ref1 = &number
+print(ref1 + 2) // 14
+
+ref1 = &str
+print(ref1 + '!') // hello world!

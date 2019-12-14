@@ -12,10 +12,15 @@ struct Variable {
 	std::any value;
 };
 
+typedef struct Node {
+	Token token;
+	Node* children;
+};
+
 class Parser {
 public:
 	~Parser();
-	void parseLine(const std::vector<Token> tokens);
+	void parse(const std::vector<Token> tokens);
 
 private:
 	std::vector<Variable> variables;
