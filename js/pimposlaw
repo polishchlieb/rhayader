@@ -1,5 +1,0 @@
-do(
-    define(value, 10),
-    ref(value),
-    print(&(value))
-)
