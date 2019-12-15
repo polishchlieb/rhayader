@@ -3,7 +3,8 @@
 export enum Type {
     operator,
     string,
-    number
+    number,
+    functionCall
 }
 
 export interface PrimitiveExpression {
@@ -13,7 +14,7 @@ export interface PrimitiveExpression {
 
 export interface Expression extends PrimitiveExpression {
     children?: PrimitiveExpression[];
-    data?: Object;
+    data?: any;
 }
 
 export function lex(): Expression {
