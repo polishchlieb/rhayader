@@ -1,10 +1,11 @@
 #include "Parser.hpp"
 
-Parser::~Parser() {
-	std::cout << "Parser made kaput, bye" << std::endl;
-}
+void soviet::parse(Node& node) {
+	if (node.type == op && node.value == "+") {
+		auto result = soviet::util::reduce<int, Node>(node.children, [](int& acc, Node& curr) {
+			return acc + std::stoi(curr.value);
+		}, 0);
 
-void Parser::parse(const std::vector<Token> tokens) {
-	int i = 0;
-	for (Token t : tokens) {}
+		std::cout << result;
+	}
 }

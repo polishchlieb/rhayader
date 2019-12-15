@@ -36,5 +36,7 @@
     <ClInclude Include="Lexer.hpp">
       <Filter>Lexer</Filter>
     </ClInclude>
+    <ClInclude Include="structures.hpp" />
+    <ClInclude Include="utils.hpp" />
   </ItemGroup>
 </Project>

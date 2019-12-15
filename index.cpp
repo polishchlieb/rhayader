@@ -3,9 +3,32 @@
 #include "lexer.hpp"
 
 #include <time.h>
+#include <stdlib.h>
+#include "utils.hpp"
 
 int main(int argc, char** argv) {
-	std::vector<std::string> arguments;
+	auto s1 = soviet::Node{
+		"10",
+		soviet::Type::number
+	};
+
+	auto s2 = soviet::Node{
+		"12",
+		soviet::Type::number
+	};
+
+	std::vector<soviet::Node> operation;
+	operation.push_back(s1);
+	operation.push_back(s2);
+
+	soviet::Node n{
+		"+",
+		soviet::op,
+		operation
+	};
+
+	soviet::parse(n);
+	/*std::vector<std::string> arguments;
 	for (int i = 0; i < argc; i++) {
 		arguments.push_back(static_cast<std::string>(argv[i]));
 	}
@@ -27,5 +50,5 @@ int main(int argc, char** argv) {
 
 	r.close();
 
-	return 0;
+	return 0;*/
 }
