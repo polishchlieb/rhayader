@@ -2,14 +2,16 @@
 #include <string>
 
 enum TokenType {
-	none = -1,
-	number = 0,
-	name = 1,
-	string = 2,
-	op = 3
+	none,
+	number,
+	name,
+	string,
+	op
 };
 
 struct Token {
 	TokenType type;
+	int line;
+	int position;
 	std::string value;
 };

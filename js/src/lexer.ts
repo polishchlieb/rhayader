@@ -1,22 +1,9 @@
-// TODO: https://areknawo.com/the-lexer-in-js/
+import { Node } from './evaluator';
 
-export enum Type {
-    operator,
-    string,
-    number,
-    functionCall
+export function parse(expr: string): Node {
+    return <Node>{};
 }
 
-export interface PrimitiveExpression {
-    type: Type;
-    value: any;
-}
-
-export interface Expression extends PrimitiveExpression {
-    children?: PrimitiveExpression[];
-    data?: any;
-}
-
-export function lex(): Expression {
-    return <Expression>{};
+export function parseLine(line: string): Node {
+    if (/(?<=[A-Z,a-z]+\().+(?=\))/)
 }

@@ -1,14 +1,17 @@
 #include "lexer.hpp"
 
-std::vector<Token> Lexer::lex(const std::string line) {
+std::vector<Token> Lexer::lex(const std::string& line) {
+	this->line++;
+
 	std::vector<Token> tokens;
 	const int length = line.length();
-	Token current = { none };
+	Token current = { none, this->line, 1 };
 
 	if (length == 0) return tokens;
 
 	for (int i = 0; i < length + 1; i++) {
 		char c = line[i];
+
 		TokenType type = getType(c);
 		if (current.type == none)
 			current.type = type;
@@ -26,28 +29,31 @@ std::vector<Token> Lexer::lex(const std::string line) {
 
 				current.type = string;
 				current.value = "";
+				current.position = i + 1;
 				continue;
 			}
 		}
 
-		if (current.type == string) {
+		else if (current.type == string) {
 			current.value += c;
 			continue;
 		}
 
-		if (c == ' ') {
+		else if (c == ' ') {
 			if (current.type == none)
 				continue;
 			tokens.push_back(current);
 			current.type = none;
 			current.value = "";
+			current.position = i + 1;
 			continue;
 		}
 
-		if (type != current.type && current.type != none) {
+		else if (type != current.type && current.type != none) {
 			tokens.push_back(current);
 			current.type = type;
 			current.value = c;
+			current.position = i + 1;
 			continue;
 		}
 
@@ -71,5 +77,6 @@ TokenType Lexer::getType(const char c) {
 bool Lexer::isOperator(const char c) {
 	return c == '-' || c == '>' || c == '='
 		|| c == '(' || c == ')' || c == ','
-		|| c == '+' || c == '{' || c == '}';
+		|| c == '+' || c == '{' || c == '}'
+		|| c == '&';
 }

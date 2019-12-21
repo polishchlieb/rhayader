@@ -1,7 +1,11 @@
-﻿  index.cpp
+﻿  Lexer.cpp
+E:\projekty\Soviet\Lexer.cpp(7,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Parser.cpp
+  index.cpp
+E:\projekty\Soviet\Lexer.cpp(7,34): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
   Generating code
-  0 of 206 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  25 of 179 functions (14.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    10 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Soviet.vcxproj -> E:\projekty\Soviet\x64\Release\Soviet.exe

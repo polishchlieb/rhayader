@@ -4,10 +4,18 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <any>
 #include "Token.hpp"
 #include "structures.hpp"
-#include "utils.hpp"
+#include "util.hpp"
 
 namespace soviet {
-	void parse(Node&);
+	struct Node {
+		Token token;
+		std::vector<Node> children;
+	};
+
+	class Parser {
+		Node parse(std::vector<Token>&);
+	};
 }
