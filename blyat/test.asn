@@ -1,6 +1,0 @@
-def main {
-    for i in 0..69 {
-        var a = (5 + 2) * 3
-        print %a
-    }
-}

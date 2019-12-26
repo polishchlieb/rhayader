@@ -1,17 +1,14 @@
 #pragma once
 #include <string>
+#include "TokenType.hpp"
 
-enum TokenType {
-	none,
-	number,
-	name,
-	string,
-	op
-};
-
-struct Token {
-	TokenType type;
-	int line;
-	int position;
-	std::string value;
-};
+namespace soviet {
+	namespace lexer {
+		struct Token {
+			TokenType type;
+			unsigned int line;
+			unsigned int position;
+			std::string value;
+		};
+	}
+}

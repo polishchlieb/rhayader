@@ -1,21 +1,14 @@
 #pragma once
-#include <vector>
-#include <any>
-#include <string>
-#include <iostream>
-#include <algorithm>
-#include <any>
+#include "Node.hpp"
 #include "Token.hpp"
-#include "structures.hpp"
-#include "util.hpp"
 
 namespace soviet {
-	struct Node {
-		Token token;
-		std::vector<Node> children;
-	};
-
-	class Parser {
-		Node parse(std::vector<Token>&);
-	};
+	namespace parser {
+		class Parser {
+		public:
+			Node parse(std::vector<soviet::lexer::Token>&);
+		private:
+			unsigned int line = 0;
+		};
+	}
 }

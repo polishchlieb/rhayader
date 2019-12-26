@@ -1,23 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="index.cpp" />
     <ClCompile Include="Parser.cpp">
-      <Filter>Parser</Filter>
+      <Filter>parser</Filter>
     </ClCompile>
-    <ClCompile Include="Lexer.cpp" />
+    <ClCompile Include="Lexer.cpp">
+      <Filter>lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ErrorHandler.cpp">
+      <Filter>executor</Filter>
+    </ClCompile>
+    <ClCompile Include="lexer_speedtest.hpp">
+      <Filter>perf</Filter>
+    </ClCompile>
+    <ClCompile Include="Executor.cpp">
+      <Filter>executor</Filter>
+    </ClCompile>
+    <ClCompile Include="file_reader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Parser">
+    <Filter Include="lexer">
+      <UniqueIdentifier>{b1468904-708e-43ff-b2f0-94838786cbc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parser">
       <UniqueIdentifier>{e94a8a27-7404-4250-b892-779ea1ba8052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="executor">
+      <UniqueIdentifier>{6b662fd0-c631-46e5-9b6c-2288f8ef3648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lexer\helper">
+      <UniqueIdentifier>{220051ef-ed03-4b91-808f-cba99469b668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="perf">
+      <UniqueIdentifier>{398ab2b2-c9b4-47ee-98fc-d80e414d4959}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Parser.hpp">
-      <Filter>Parser</Filter>
+      <Filter>parser</Filter>
     </ClInclude>
-    <ClInclude Include="structures.hpp" />
     <ClInclude Include="util.hpp" />
-    <ClInclude Include="Lexer.hpp" />
+    <ClInclude Include="output.hpp" />
+    <ClInclude Include="Executor.hpp">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexer.hpp">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenType.hpp">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.hpp">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="ParseError.hpp">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxError.hpp">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.hpp">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorHandler.hpp">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.hpp">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="lexerhelper.hpp">
+      <Filter>lexer\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="parser_speedtest.hpp">
+      <Filter>perf</Filter>
+    </ClInclude>
+    <ClInclude Include="argshelper.hpp" />
+    <ClInclude Include="file_reader.hpp" />
   </ItemGroup>
 </Project>

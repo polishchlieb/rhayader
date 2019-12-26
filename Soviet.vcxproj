@@ -72,6 +72,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)dependencies;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -129,14 +138,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="index.cpp" />
+    <ClCompile Include="ErrorHandler.cpp" />
+    <ClCompile Include="Executor.cpp" />
+    <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="lexer_speedtest.hpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="argshelper.hpp" />
+    <ClInclude Include="Error.hpp" />
+    <ClInclude Include="ErrorHandler.hpp" />
+    <ClInclude Include="Executor.hpp" />
+    <ClInclude Include="file_reader.hpp" />
     <ClInclude Include="Lexer.hpp" />
-    <ClInclude Include="structures.hpp" />
+    <ClInclude Include="parser_speedtest.hpp" />
+    <ClInclude Include="SyntaxError.hpp" />
+    <ClInclude Include="lexerhelper.hpp" />
+    <ClInclude Include="Node.hpp" />
+    <ClInclude Include="output.hpp" />
+    <ClInclude Include="ParseError.hpp" />
     <ClInclude Include="Parser.hpp" />
+    <ClInclude Include="Token.hpp" />
+    <ClInclude Include="TokenType.hpp" />
     <ClInclude Include="util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

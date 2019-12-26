@@ -1,14 +1,20 @@
 #pragma once
 #include <vector>
 #include <string>
+
 #include "Token.hpp"
+#include "TokenType.hpp"
 
-class Lexer {
-public:
-	std::vector<Token> lex(const std::string&);
-	static TokenType getType(const char);
-	static bool isOperator(const char);
+namespace soviet {
+	namespace lexer {
+		class Lexer {
+		public:
+			std::vector<Token> lex(const std::string&);
+		private:
+			static TokenType getType(char);
+			static bool isOperator(char);
 
-private:
-	int line = 0;
-};
+			unsigned int line = 0;
+		};
+	}
+}

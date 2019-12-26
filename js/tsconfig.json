@@ -1,8 +1,0 @@
-{
-    "include": ["src/**/*"],
-    "compilerOptions": {
-        "outDir": "dist",
-        "lib": ["es2019"],
-        "resolveJsonModule": true
-    }
-}
