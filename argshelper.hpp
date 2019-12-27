@@ -11,5 +11,5 @@ namespace soviet {
 		flag flags[];
 	};
 
-	ArgumentData parseArgs(int, char**);
+	ArgumentData parseArgs(int argc, char** argv) {}
 }

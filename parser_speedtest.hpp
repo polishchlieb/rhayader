@@ -15,11 +15,13 @@ inline void testParserSpeed() {
 	soviet::parser::Parser parser;
 
 	const std::string line = "print(\"Hello world\")";
+
 	auto tokens = lexer.lex(line);
 
 	auto start = std::chrono::system_clock::now();
 	for (unsigned int i = 0; i < 1000000; i++) {
-		auto tree = parser.parse(tokens);
+		auto tok = tokens;
+		auto tree = parser.parse(tok);
 	}
 	auto end = std::chrono::system_clock::now();
 

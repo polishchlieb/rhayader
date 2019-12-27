@@ -4,8 +4,14 @@
 #include "Parser.hpp"
 #include "Executor.hpp"
 #include "file_reader.hpp"
+#include "lexerhelper.hpp"
 
-int main(int argc, char** argv) {
+#ifndef NUB_DEBUG
+// #define NUB_DEBUG
+#endif
+
+int main(int argc, const char** argv) {
+#ifndef NUB_DEBUG
 	if (argc != 2) {
 		print("Error: ", 12);
 		print("too little arguments\n");
@@ -13,6 +19,9 @@ int main(int argc, char** argv) {
 		print("use soviet filename instead\n");
 		return 1;
 	}
+#else
+	argv[1] = "x64/Release/test.soviet";
+#endif
 
 	soviet::lexer::Lexer lexer;
 	soviet::parser::Parser parser;
@@ -25,7 +34,7 @@ int main(int argc, char** argv) {
 	for (const auto& line : lines) {
 		lineNum++;
 		auto tokens = lexer.lex(line);
-		auto tree = parser.parse(tokens);
+		soviet::Node tree = parser.parse(tokens);
 		executor.execute(tree, lineNum);
 	}
 }

@@ -25,3 +25,9 @@ inline void print(const std::string& contents, unsigned int color = 7) {
 	std::cout << "\x1B[" << 30 + color << "m" << contents << "\x1B[0m";
 	#endif
 }
+
+inline void error(const std::string& type, const std::string& contents) {
+	print(type + ": ", 12);
+	print(contents + '\n');
+	exit(2137);
+}
