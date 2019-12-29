@@ -15,6 +15,7 @@
       <Filter>executor</Filter>
     </ClCompile>
     <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="argshelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lexer">
@@ -25,9 +26,6 @@
     </Filter>
     <Filter Include="executor">
       <UniqueIdentifier>{6b662fd0-c631-46e5-9b6c-2288f8ef3648}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lexer\helper">
-      <UniqueIdentifier>{220051ef-ed03-4b91-808f-cba99469b668}</UniqueIdentifier>
     </Filter>
     <Filter Include="perf">
       <UniqueIdentifier>{398ab2b2-c9b4-47ee-98fc-d80e414d4959}</UniqueIdentifier>
@@ -54,9 +52,6 @@
     <ClInclude Include="Node.hpp">
       <Filter>parser</Filter>
     </ClInclude>
-    <ClInclude Include="lexerhelper.hpp">
-      <Filter>lexer\helper</Filter>
-    </ClInclude>
     <ClInclude Include="parser_speedtest.hpp">
       <Filter>perf</Filter>
     </ClInclude>
@@ -65,8 +60,14 @@
     <ClInclude Include="Function.hpp">
       <Filter>executor</Filter>
     </ClInclude>
-    <ClInclude Include="printTree.hpp">
+    <ClInclude Include="lexerhelper.hpp">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="parserhelper.hpp">
       <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Variable.hpp">
+      <Filter>executor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

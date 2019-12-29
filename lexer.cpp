@@ -11,7 +11,7 @@ namespace soviet {
 
 			if (length == 0) return tokens;
 
-			for (unsigned int i = 0; i < length + 1; i++) {
+			for (unsigned int i = 0; i < length + 1; ++i) {
 				char c = line[i];
 
 				auto type = getType(c);

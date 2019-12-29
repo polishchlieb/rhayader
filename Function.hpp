@@ -4,10 +4,10 @@
 #include "Node.hpp"
 
 namespace soviet {
-	typedef std::function<void* (std::vector<std::any>&)> function;
+	typedef std::function<std::any(std::vector<std::any>&)> fn;
 
 	struct Function {
-		function call;
+		fn call;
 		int argCount = 0;
 	};
 }

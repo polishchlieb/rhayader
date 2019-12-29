@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="argshelper.cpp" />
     <ClCompile Include="Executor.cpp" />
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="lexer_speedtest.hpp" />
@@ -152,7 +153,7 @@
     <ClInclude Include="Function.hpp" />
     <ClInclude Include="Lexer.hpp" />
     <ClInclude Include="parser_speedtest.hpp" />
-    <ClInclude Include="printTree.hpp" />
+    <ClInclude Include="parserhelper.hpp" />
     <ClInclude Include="lexerhelper.hpp" />
     <ClInclude Include="Node.hpp" />
     <ClInclude Include="output.hpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Token.hpp" />
     <ClInclude Include="TokenType.hpp" />
     <ClInclude Include="util.hpp" />
+    <ClInclude Include="Variable.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

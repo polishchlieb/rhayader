@@ -6,8 +6,7 @@ namespace soviet {
 			if (tokens.size() > 2 && tokens[1].value == "(") {
 				auto functionName = tokens[0];
 
-				// Remove the function's name to
-				// easily iterate over other stuff
+				// Remove the function's name to easily iterate over other stuff
 				tokens.erase(tokens.begin());
 
 				// Current argument tokens' vector, we'll call another parse(s) on it
@@ -19,25 +18,36 @@ namespace soviet {
 				for (const auto& token : tokens) {
 					if (token.value == "(") {
 						level++;
-						if (level != 1)
+						if (level != 1) {
 							current.push_back(token);
+							print("");
+						}
 					} else if (token.value == ")") {
 						level--;
 
-						if (level != 0)
+						if (level != 0) {
 							current.push_back(token);
+							print("");
+						}
 
-						if (current.size() != 0)
+						if (current.size() != 0) {
 							arguments.push_back(parse(current));
+							current.clear();
+						}
 
 						// TODO: Handling stuff after function call
-						if (level == 0) break;
+						if (level == 0) {
+							print("");
+							break;
+						}
 					} else if (token.value == "," && level == 1) {
-						lexer::helper::dump(current);
-						arguments.push_back(parse(current));
-						current.clear();
+						if (current.size() != 0) {
+							arguments.push_back(parse(current));
+							current.clear();
+						}
 					} else {
 						current.push_back(token);
+						print("");
 					}
 				}
 
@@ -49,10 +59,9 @@ namespace soviet {
 					functionName,
 					arguments
 				};
-				// printTree(node);
+
 				return node;
 			}
-
 			else if (tokens.size() >= 2 && tokens[1].value == "()") {
 				return Node{
 					NodeType::functionCall,
@@ -60,16 +69,33 @@ namespace soviet {
 					std::vector<Node>()
 				};
 			}
+			else if (tokens.size() > 2 && tokens[1].value == ":=") {
+				const auto equals = tokens[1];
+				std::vector<Node> children;
 
+				children.push_back(Node{
+					NodeType::primitive,
+					tokens[0]
+				});
+				tokens.erase(tokens.begin());
+				tokens.erase(tokens.begin());
+				children.push_back(parse(tokens));
+
+				return Node{
+					NodeType::assignment,
+					equals,
+					children
+				};
+			}
 			else if (tokens.size() == 1) {
-				typedef soviet::lexer::TokenType TokenType;
+				// typedef soviet::lexer::TokenType TokenType;
 
-				// if (tokens[0].type == soviet::lexer::TokenType::string)
 				return Node{
 					NodeType::primitive,
 					tokens[0]
 				};
 			}
+
 			return Node();
 		}
 	}

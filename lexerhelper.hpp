@@ -6,7 +6,7 @@
 namespace soviet {
 	namespace lexer {
 		namespace helper {
-			inline std::string toString(TokenType type) {
+			static inline std::string toString(TokenType type) {
 				switch (type) {
 					case TokenType::name: return "name";
 					case TokenType::none: return "none";
@@ -14,9 +14,10 @@ namespace soviet {
 					case TokenType::op: return "operator";
 					case TokenType::string: return "string";
 				}
+				return "none";
 			}
 
-			inline void dump(const std::vector<Token>& tokens) {
+			static inline void dump(const std::vector<Token>& tokens) {
 				for (auto& token : tokens) {
 					std::cout << "Line: " << token.line
 						<< " Position: " << token.position
@@ -24,6 +25,7 @@ namespace soviet {
 						<< " Value: " << token.value
 						<< std::endl;
 				}
+				std::cout << std::endl;
 			}
 		}
 	}
