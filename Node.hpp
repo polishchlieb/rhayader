@@ -4,7 +4,8 @@
 namespace soviet {
 	enum class NodeType {
 		 functionCall,
-		 primitive
+		 primitive,
+		 op // operator
 	};
 
 	struct Node {

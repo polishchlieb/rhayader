@@ -6,8 +6,8 @@ namespace soviet {
 	namespace lexer {
 		struct Token {
 			TokenType type;
-			unsigned int line;
-			unsigned int position;
+			unsigned int line = 0;
+			unsigned int position = 0;
 			std::string value;
 		};
 	}

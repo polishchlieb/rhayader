@@ -3,18 +3,18 @@
 namespace soviet {
 	namespace lexer {
 		std::vector<Token> Lexer::lex(const std::string& line) {
-			this->line++;
+			lineNum++;
 
 			std::vector<Token> tokens;
 			const unsigned int length = static_cast<unsigned int>(line.length());
-			Token current = { TokenType::none, this->line, 1 };
+			Token current = { TokenType::none, lineNum, 1 };
 
 			if (length == 0) return tokens;
 
 			for (unsigned int i = 0; i < length + 1; i++) {
 				char c = line[i];
 
-				TokenType type = getType(c);
+				auto type = getType(c);
 				if (current.type == TokenType::none)
 					current.type = type;
 
@@ -24,8 +24,7 @@ namespace soviet {
 						current.type = TokenType::none;
 						current.value = "";
 						continue;
-					}
-					else {
+					} else {
 						if (current.type != TokenType::none)
 							tokens.push_back(current);
 
@@ -34,14 +33,10 @@ namespace soviet {
 						current.position = i + 1;
 						continue;
 					}
-				}
-
-				else if (current.type == TokenType::string) {
+				} else if (current.type == TokenType::string) {
 					current.value += c;
 					continue;
-				}
-
-				else if (c == ' ') {
+				} else if (c == ' ') {
 					if (current.type == TokenType::none)
 						continue;
 					tokens.push_back(current);
@@ -49,9 +44,22 @@ namespace soviet {
 					current.value = "";
 					current.position = i + 1;
 					continue;
-				}
-
-				else if (type != current.type && current.type != TokenType::none) {
+				} else if (type != current.type && current.type != TokenType::none) {
+					tokens.push_back(current);
+					current.type = type;
+					current.value = c;
+					current.position = i + 1;
+					continue;
+				} 
+				// TODO: Normalize position!
+				// TODO: Reduce operator stuff
+				else if (current.value == ")" && c == ',') {
+					tokens.push_back(current);
+					current.type = type;
+					current.value = c;
+					current.position = i + 1;
+					continue;
+				} else if (current.value == ")" && c == ')') {
 					tokens.push_back(current);
 					current.type = type;
 					current.value = c;

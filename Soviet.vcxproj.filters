@@ -8,9 +8,6 @@
       <Filter>lexer</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ErrorHandler.cpp">
-      <Filter>executor</Filter>
-    </ClCompile>
     <ClCompile Include="lexer_speedtest.hpp">
       <Filter>perf</Filter>
     </ClCompile>
@@ -54,18 +51,6 @@
     <ClInclude Include="Token.hpp">
       <Filter>lexer</Filter>
     </ClInclude>
-    <ClInclude Include="ParseError.hpp">
-      <Filter>parser</Filter>
-    </ClInclude>
-    <ClInclude Include="SyntaxError.hpp">
-      <Filter>lexer</Filter>
-    </ClInclude>
-    <ClInclude Include="Error.hpp">
-      <Filter>executor</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrorHandler.hpp">
-      <Filter>executor</Filter>
-    </ClInclude>
     <ClInclude Include="Node.hpp">
       <Filter>parser</Filter>
     </ClInclude>
@@ -77,5 +62,11 @@
     </ClInclude>
     <ClInclude Include="argshelper.hpp" />
     <ClInclude Include="file_reader.hpp" />
+    <ClInclude Include="Function.hpp">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="printTree.hpp">
+      <Filter>parser</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

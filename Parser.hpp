@@ -7,11 +7,14 @@
 #include <functional>
 #include <iostream>
 
+#include "lexerhelper.hpp"
+#include "printTree.hpp"
+
 namespace soviet {
 	namespace parser {
 		class Parser {
 		public:
-			Node parse(std::vector<soviet::lexer::Token>&);
+			Node parse(std::vector<soviet::lexer::Token>& tokens);
 		private:
 			unsigned int line = 0;
 		};

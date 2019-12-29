@@ -9,12 +9,12 @@ namespace soviet {
 	namespace lexer {
 		class Lexer {
 		public:
-			std::vector<Token> lex(const std::string&);
+			std::vector<Token> lex(const std::string& line);
 		private:
 			static TokenType getType(char);
 			static bool isOperator(char);
 
-			unsigned int line = 0;
+			unsigned int lineNum = 0;
 		};
 	}
 }
