@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="soviet" targetName="soviet" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bb67d6da-82bc-48a3-9b5a-9cacefb6ed2d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1fbT44ntSDzoSsZwN6UMcZFskfq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="IgnoreLang" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="soviet" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="soviet" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="soviet" RUN_TARGET_NAME="soviet">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb67d6da-82bc-48a3-9b5a-9cacefb6ed2d" name="Default Changelist" comment="" />
+      <created>1596485598770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596485598770</updated>
+      <workItem from="1596485601070" duration="9352000" />
+      <workItem from="1596575603249" duration="5528000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596575954703">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596575954703" />
+    <state x="557" y="339" width="556" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596485723169">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="557" y="339" width="556" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1680.1023@0.27.1680.1023" timestamp="1596485723169" />
+    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596576951462">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596576951462" />
+    <state width="1657" height="266" key="GridCell.Tab.0.bottom" timestamp="1596581126941">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="266" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126941" />
+    <state width="1657" height="266" key="GridCell.Tab.0.center" timestamp="1596581126940">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="266" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
+    <state width="1657" height="266" key="GridCell.Tab.0.left" timestamp="1596581126940">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="266" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
+    <state width="1657" height="266" key="GridCell.Tab.0.right" timestamp="1596581126940">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="266" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
+    <state x="329" y="173" width="1022" height="737" key="SettingsEditor" timestamp="1596485654403">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="329" y="173" width="1022" height="737" key="SettingsEditor/0.27.1680.1023@0.27.1680.1023" timestamp="1596485654403" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1596576563982">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596576563982" />
+    <state x="503" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1596576037755">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state x="503" y="251" width="672" height="678" key="search.everywhere.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596576037755" />
+  </component>
+</project>
