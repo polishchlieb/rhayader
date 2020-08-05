@@ -12,7 +12,10 @@ namespace tokenizer {
         name,
         number,
         string,
-        op
+        add_op,
+        sub_op,
+        div_op,
+        mul_op
     };
 
     std::string dumpPendingTokenType(const PendingTokenType type) {
@@ -22,7 +25,10 @@ namespace tokenizer {
             case PendingTokenType::name: return "name";
             case PendingTokenType::number: return "number";
             case PendingTokenType::string: return "string";
-            case PendingTokenType::op: return "operator";
+            case PendingTokenType::add_op: return "add_operator";
+            case PendingTokenType::sub_op: return "substract_operator";
+            case PendingTokenType::div_op: return "divide_operator";
+            case PendingTokenType::mul_op: return "multiply_operator";
         }
     }
 
@@ -31,7 +37,10 @@ namespace tokenizer {
             case PendingTokenType::name: return TokenType::name;
             case PendingTokenType::number: return TokenType::number;
             case PendingTokenType::string: return TokenType::string;
-            case PendingTokenType::op: return TokenType::op;
+            case PendingTokenType::add_op: return TokenType::add_op;
+            case PendingTokenType::sub_op: return TokenType::sub_op;
+            case PendingTokenType::div_op: return TokenType::div_op;
+            case PendingTokenType::mul_op: return TokenType::mul_op;
             default:
                 throw std::runtime_error("Couldn't convert pending token type " + dumpPendingTokenType(type) + " to token type");
         }

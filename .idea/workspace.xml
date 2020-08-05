@@ -36,9 +36,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="soviet" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="soviet" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="soviet" RUN_TARGET_NAME="soviet">
@@ -62,6 +62,7 @@
       <updated>1596485598770</updated>
       <workItem from="1596485601070" duration="9352000" />
       <workItem from="1596575603249" duration="5528000" />
+      <workItem from="1596655839121" duration="7527000" />
     </task>
     <servers />
   </component>
@@ -78,22 +79,22 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596576951462" />
-    <state width="1657" height="266" key="GridCell.Tab.0.bottom" timestamp="1596581126941">
+    <state width="1657" height="266" key="GridCell.Tab.0.bottom" timestamp="1596661959487">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126941" />
-    <state width="1657" height="266" key="GridCell.Tab.0.center" timestamp="1596581126940">
+    <state width="1657" height="266" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596661959487" />
+    <state width="1657" height="266" key="GridCell.Tab.0.center" timestamp="1596661959487">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
-    <state width="1657" height="266" key="GridCell.Tab.0.left" timestamp="1596581126940">
+    <state width="1657" height="266" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596661959487" />
+    <state width="1657" height="266" key="GridCell.Tab.0.left" timestamp="1596661959486">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
-    <state width="1657" height="266" key="GridCell.Tab.0.right" timestamp="1596581126940">
+    <state width="1657" height="266" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596661959486" />
+    <state width="1657" height="266" key="GridCell.Tab.0.right" timestamp="1596661959487">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596581126940" />
+    <state width="1657" height="266" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596661959487" />
     <state x="329" y="173" width="1022" height="737" key="SettingsEditor" timestamp="1596485654403">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>

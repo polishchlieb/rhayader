@@ -13,6 +13,10 @@ namespace tokenizer {
         if (isalpha(c)) return PendingTokenType::name;
         if (c == ' ') return PendingTokenType::none;
         if (c == '\'' || c == '"') return PendingTokenType::string;
+        if (c == '+') return PendingTokenType::add_op;
+        if (c == '-') return PendingTokenType::sub_op;
+        if (c == '*') return PendingTokenType::mul_op;
+        if (c == '/') return PendingTokenType::div_op;
         return PendingTokenType::unknown;
     }
 
@@ -27,7 +31,10 @@ namespace tokenizer {
                 switch (getType(c)) {
                     case PendingTokenType::number:
                     case PendingTokenType::name:
-                    case PendingTokenType::op:
+                    case PendingTokenType::add_op:
+                    case PendingTokenType::sub_op:
+                    case PendingTokenType::div_op:
+                    case PendingTokenType::mul_op:
                         current.type = type;
                         current.value += c;
                         break;
@@ -57,13 +64,34 @@ namespace tokenizer {
                 if (type == PendingTokenType::number) {
                     current.value += c;
                     continue;
-                } else {
-                    tokens.push_back(current.toToken());
-                    current.clear();
-                    goto iteration;
                 }
+
+                tokens.push_back(current.toToken());
+                current.clear();
+                goto iteration;
+            }
+
+            if (current.type == PendingTokenType::name) {
+                const auto type = getType(c);
+                if (type == PendingTokenType::name || type == PendingTokenType::number) {
+                    current.value += c;
+                    continue;
+                }
+
+                tokens.push_back(current.toToken());
+                current.clear();
+                goto iteration;
+            }
+
+            if (current.type == PendingTokenType::add_op) {
+                tokens.push_back(current.toToken());
+                current.clear();
+                goto iteration;
             }
         }
+
+        if (!current.isEmpty())
+            tokens.push_back(current.toToken());
 
         return tokens;
     }

@@ -21,6 +21,10 @@ namespace tokenizer {
             this->type = PendingTokenType::none;
             this->value = "";
         }
+
+        bool isEmpty() {
+            return this->type == PendingTokenType::none;
+        }
     };
 }
 
