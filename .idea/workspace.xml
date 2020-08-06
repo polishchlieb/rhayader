@@ -24,6 +24,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectId" id="1fbT44ntSDzoSsZwN6UMcZFskfq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,9 +39,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="soviet" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="soviet" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="soviet" RUN_TARGET_NAME="soviet">
@@ -62,15 +65,16 @@
       <updated>1596485598770</updated>
       <workItem from="1596485601070" duration="9352000" />
       <workItem from="1596575603249" duration="5528000" />
-      <workItem from="1596655839121" duration="11706000" />
+      <workItem from="1596655839121" duration="12244000" />
+      <workItem from="1596730442522" duration="17503000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596575954703">
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596731568194">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596575954703" />
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596731568194" />
     <state x="557" y="339" width="556" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596485723169">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -79,22 +83,22 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596576951462" />
-    <state width="1657" height="266" key="GridCell.Tab.0.bottom" timestamp="1596668575600">
+    <state width="1657" height="307" key="GridCell.Tab.0.bottom" timestamp="1596755161846">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596668575600" />
-    <state width="1657" height="266" key="GridCell.Tab.0.center" timestamp="1596668575600">
+    <state width="1657" height="307" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
+    <state width="1657" height="307" key="GridCell.Tab.0.center" timestamp="1596755161846">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596668575600" />
-    <state width="1657" height="266" key="GridCell.Tab.0.left" timestamp="1596668575600">
+    <state width="1657" height="307" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
+    <state width="1657" height="307" key="GridCell.Tab.0.left" timestamp="1596755161845">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596668575600" />
-    <state width="1657" height="266" key="GridCell.Tab.0.right" timestamp="1596668575600">
+    <state width="1657" height="307" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161845" />
+    <state width="1657" height="307" key="GridCell.Tab.0.right" timestamp="1596755161846">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="266" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596668575600" />
+    <state width="1657" height="307" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
     <state x="329" y="173" width="1022" height="737" key="SettingsEditor" timestamp="1596485654403">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>

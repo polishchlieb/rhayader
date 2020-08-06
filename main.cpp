@@ -1,12 +1,14 @@
 #include "tokenizer/tokenizer.hpp"
-#include <iostream>
+#include "parser/Parser.hpp"
+#include "parser/dumpNode.hpp"
 
 int main() {
     tokenizer::Tokenizer t;
-    const auto tokens = t.tokenize("1 + 2 - 3 * 4 / 5");
-    for (const auto& token : tokens) {
-        std::cout << "(" << tokenizer::dumpTokenType(token.type) << ") " << token.value << std::endl;
-    }
+    const auto tokens = t.tokenize("1 + 2 + 3 + 4");
+
+    parser::Parser p;
+    const auto rootNode = p.parse(tokens);
+    parser::dump(rootNode);
 
     return 0;
 }
