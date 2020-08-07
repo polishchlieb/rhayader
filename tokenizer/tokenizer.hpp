@@ -34,6 +34,8 @@ namespace tokenizer {
                 case PendingTokenType::sub_op: parseSubOp(c); break;
                 case PendingTokenType::mul_op: parseMulOp(c); break;
                 case PendingTokenType::div_op: parseDivOp(c); break;
+                case PendingTokenType::open_bracket: parseOpenBracket(c); break;
+                case PendingTokenType::close_bracket: parseCloseBracket(c); break;
                 default:
                     throw std::runtime_error("not implemented (yet)");
             }
@@ -48,6 +50,8 @@ namespace tokenizer {
             if (c == '-') return PendingTokenType::sub_op;
             if (c == '*') return PendingTokenType::mul_op;
             if (c == '/') return PendingTokenType::div_op;
+            if (c == '(') return PendingTokenType::open_bracket;
+            if (c == ')') return PendingTokenType::close_bracket;
             return PendingTokenType::unknown;
         }
 
@@ -60,11 +64,13 @@ namespace tokenizer {
                 case PendingTokenType::sub_op:
                 case PendingTokenType::div_op:
                 case PendingTokenType::mul_op:
+                case PendingTokenType::unknown:
+                case PendingTokenType::open_bracket:
+                case PendingTokenType::close_bracket:
                     previous.type = type;
                     previous.value += c;
                     break;
                 case PendingTokenType::string:
-                case PendingTokenType::unknown:
                     previous.type = type;
                     break;
                 case PendingTokenType::none:
@@ -125,6 +131,18 @@ namespace tokenizer {
         }
 
         void parseDivOp(const char c) {
+            tokens.push_back(previous.toToken());
+            previous.clear();
+            parseChar(c);
+        }
+
+        void parseOpenBracket(const char c) {
+            tokens.push_back(previous.toToken());
+            previous.clear();
+            parseChar(c);
+        }
+
+        void parseCloseBracket(const char c) {
             tokens.push_back(previous.toToken());
             previous.clear();
             parseChar(c);

@@ -15,7 +15,9 @@ namespace tokenizer {
         add_op,
         sub_op,
         div_op,
-        mul_op
+        mul_op,
+        open_bracket,
+        close_bracket
     };
 
     std::string dumpPendingTokenType(const PendingTokenType type) {
@@ -29,6 +31,8 @@ namespace tokenizer {
             case PendingTokenType::sub_op: return "substract_operator";
             case PendingTokenType::div_op: return "divide_operator";
             case PendingTokenType::mul_op: return "multiply_operator";
+            case PendingTokenType::open_bracket: return "open_bracket";
+            case PendingTokenType::close_bracket: return "close_bracket";
         }
     }
 
@@ -41,6 +45,8 @@ namespace tokenizer {
             case PendingTokenType::sub_op: return TokenType::sub_op;
             case PendingTokenType::div_op: return TokenType::div_op;
             case PendingTokenType::mul_op: return TokenType::mul_op;
+            case PendingTokenType::open_bracket: return TokenType::open_bracket;
+            case PendingTokenType::close_bracket: return TokenType::close_bracket;
             default:
                 throw std::runtime_error("Couldn't convert pending token type " + dumpPendingTokenType(type) + " to token type");
         }
