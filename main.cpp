@@ -4,10 +4,11 @@
 
 int main() {
     tokenizer::Tokenizer t;
-    const auto tokens = t.tokenize("1 + 2 + 3 + 4");
+    const auto tokens = t.tokenize("(21 + 56) / (12 + 34)");
 
     parser::Parser p;
     const auto rootNode = p.parse(tokens);
+
     parser::dump(rootNode);
 
     return 0;

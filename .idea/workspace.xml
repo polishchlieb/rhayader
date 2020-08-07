@@ -33,6 +33,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="IgnoreLang" />
@@ -66,15 +67,17 @@
       <workItem from="1596485601070" duration="9352000" />
       <workItem from="1596575603249" duration="5528000" />
       <workItem from="1596655839121" duration="12244000" />
-      <workItem from="1596730442522" duration="17503000" />
+      <workItem from="1596730442522" duration="17723000" />
+      <workItem from="1596826539835" duration="8768000" />
+      <workItem from="1596841453533" duration="432000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596731568194">
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596841662984">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596731568194" />
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596841662984" />
     <state x="557" y="339" width="556" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596485723169">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -83,22 +86,38 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596576951462" />
-    <state width="1657" height="307" key="GridCell.Tab.0.bottom" timestamp="1596755161846">
+    <state width="1657" height="307" key="GridCell.Tab.0.bottom" timestamp="1596841623066">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
-    <state width="1657" height="307" key="GridCell.Tab.0.center" timestamp="1596755161846">
+    <state width="1657" height="307" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596841623066" />
+    <state width="1657" height="307" key="GridCell.Tab.0.center" timestamp="1596841623066">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
-    <state width="1657" height="307" key="GridCell.Tab.0.left" timestamp="1596755161845">
+    <state width="1657" height="307" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596841623066" />
+    <state width="1657" height="307" key="GridCell.Tab.0.left" timestamp="1596841623065">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161845" />
-    <state width="1657" height="307" key="GridCell.Tab.0.right" timestamp="1596755161846">
+    <state width="1657" height="307" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596841623065" />
+    <state width="1657" height="307" key="GridCell.Tab.0.right" timestamp="1596841623066">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596755161846" />
+    <state width="1657" height="307" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596841623066" />
+    <state width="1657" height="328" key="GridCell.Tab.1.bottom" timestamp="1596840656985">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="328" key="GridCell.Tab.1.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596840656985" />
+    <state width="1657" height="328" key="GridCell.Tab.1.center" timestamp="1596840656985">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="328" key="GridCell.Tab.1.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596840656985" />
+    <state width="1657" height="328" key="GridCell.Tab.1.left" timestamp="1596840656984">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="328" key="GridCell.Tab.1.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596840656984" />
+    <state width="1657" height="328" key="GridCell.Tab.1.right" timestamp="1596840656985">
+      <screen x="0" y="27" width="1680" height="1023" />
+    </state>
+    <state width="1657" height="328" key="GridCell.Tab.1.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596840656985" />
     <state x="329" y="173" width="1022" height="737" key="SettingsEditor" timestamp="1596485654403">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -111,15 +130,5 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="503" y="251" width="672" height="678" key="search.everywhere.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596576037755" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/tokenizer/tokenizer.hpp</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
