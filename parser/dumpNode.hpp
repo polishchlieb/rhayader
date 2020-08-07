@@ -16,37 +16,28 @@ namespace parser {
     }
 
     static void dump(const std::shared_ptr<Node>& node, unsigned int spacing = 0) {
-        if (node->type == NodeType::AddOpNode) {
-            const auto& n = node_cast<AddOpNode>(node);
+        switch (node->type) {
+            case NodeType::AddOpNode:
+            case NodeType::SubOpNode:
+            case NodeType::MulOpNode:
+            case NodeType::DivOpNode: {
+                // all these node types have the same properties
+                // so we can cast any of them to another one
+                // AddOpNode here can be replaced with SubOpNode, etc.
+                const auto& operatorNode = node_cast<AddOpNode>(node);
 
-            std::cout << times(" ", 2 * spacing)
-                << "add operator:" << std::endl;
-            dump(n->left, spacing + 2);
-            dump(n->right,  spacing + 2);
-        } else if (node->type == NodeType::SubOpNode) {
-            const auto& n = node_cast<SubOpNode>(node);
-
-            std::cout << times(" ", 2 * spacing)
-                << "substract operator:" << std::endl;
-            dump(n->left, spacing + 2);
-            dump(n->right, spacing + 2);
-        } else if (node->type == NodeType::MulOpNode) {
-            const auto& n = node_cast<MulOpNode>(node);
-
-            std::cout << times(" ", 2 * spacing)
-                << "multiply operator:" << std::endl;
-            dump(n->left, spacing + 2);
-            dump(n->right, spacing + 2);
-        } else if (node->type == NodeType::DivOpNode) {
-            const auto& n = node_cast<DivOpNode>(node);
-
-            std::cout << times(" ", 2 * spacing)
-                << "divide operator:" << std::endl;
-            dump(n->left, spacing + 2);
-            dump(n->right, spacing + 2);
-        } else if (node->type == NodeType::NumberNode) {
-            const auto& n = node_cast<NumberNode>(node);
-            std::cout << times(" ",  2 * spacing) << "number: " << n->value << std::endl;
+                std::cout << times(" ", 2 * spacing)
+                          << dumpNodeType(node->type) << ":" << std::endl;
+                dump(operatorNode->left, spacing + 2);
+                dump(operatorNode->right, spacing + 2);
+                break;
+            }
+            case NodeType::NumberNode: {
+                const auto& numberNode = node_cast<NumberNode>(node);
+                std::cout << times(" ", 2 * spacing)
+                    << dumpNodeType(node->type) << ": " << numberNode->value << std::endl;
+                break;
+            }
         }
     }
 }
