@@ -22,7 +22,7 @@ namespace tokenizer {
             this->value = "";
         }
 
-        bool isEmpty() {
+        bool isEmpty() const {
             return this->type == PendingTokenType::none;
         }
     };

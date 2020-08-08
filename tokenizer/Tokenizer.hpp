@@ -20,6 +20,7 @@ namespace tokenizer {
 
             return tokens;
         }
+
     private:
         std::vector<Token> tokens;
         PendingToken previous{PendingTokenType::none, ""};
