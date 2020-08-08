@@ -48,7 +48,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="IgnoreLang" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Google Test.soviet_test">
+  <component name="RunManager" selected="CMake Application.soviet">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -114,7 +114,7 @@
       <workItem from="1596826539835" duration="8768000" />
       <workItem from="1596841453533" duration="1263000" />
       <workItem from="1596888965742" duration="2997000" />
-      <workItem from="1596904992687" duration="11376000" />
+      <workItem from="1596904992687" duration="13985000" />
     </task>
     <servers />
   </component>
@@ -139,22 +139,22 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="880" y="422" width="304" height="501" key="EnvironmentVariablesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596918716023" />
-    <state width="1657" height="307" key="GridCell.Tab.0.bottom" timestamp="1596920423369">
+    <state width="828" height="303" key="GridCell.Tab.0.bottom" timestamp="1596924012186">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596920423369" />
-    <state width="1657" height="307" key="GridCell.Tab.0.center" timestamp="1596920423369">
+    <state width="828" height="303" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012186" />
+    <state width="828" height="303" key="GridCell.Tab.0.center" timestamp="1596924012184">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596920423369" />
-    <state width="1657" height="307" key="GridCell.Tab.0.left" timestamp="1596920423369">
+    <state width="828" height="303" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012184" />
+    <state width="828" height="303" key="GridCell.Tab.0.left" timestamp="1596924012183">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596920423369" />
-    <state width="1657" height="307" key="GridCell.Tab.0.right" timestamp="1596920423369">
+    <state width="828" height="303" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012183" />
+    <state width="828" height="303" key="GridCell.Tab.0.right" timestamp="1596924012185">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="307" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596920423369" />
+    <state width="828" height="303" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012185" />
     <state width="1657" height="328" key="GridCell.Tab.1.bottom" timestamp="1596840656985">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -179,10 +179,10 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596576563982" />
-    <state x="504" y="244" key="run.anything.popup" timestamp="1596906625915">
+    <state x="504" y="244" key="run.anything.popup" timestamp="1596922857187">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="504" y="244" key="run.anything.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596906625915" />
+    <state x="504" y="244" key="run.anything.popup/0.27.1680.1023@0.27.1680.1023" timestamp="1596922857187" />
     <state x="630" y="404" width="511" height="411" key="scopes" timestamp="1596918069021">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
