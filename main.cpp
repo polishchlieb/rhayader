@@ -2,6 +2,7 @@
 #include "parser/Parser.hpp"
 #include "parser/dumpNode.hpp"
 #include "evaluator/evaluator.hpp"
+#include "evaluator/dumpValue.hpp"
 
 int main() {
     while (true) {
@@ -30,8 +31,8 @@ int main() {
         std::cout << "---------------------" << std::endl;
 
         std::cout << "Evaluator output:" << std::endl;
-        float value = evaluator::evaluate(rootNode);
-        std::cout << value << std::endl << std::endl;
+        const auto value = evaluator::evaluate(rootNode);
+        std::cout << dumpValue(value) << std::endl << std::endl;
     }
-    return 0;
 }
+

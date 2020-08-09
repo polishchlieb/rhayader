@@ -29,6 +29,7 @@ namespace tokenizer {
             case TokenType::open_bracket: return "open_bracket";
             case TokenType::close_bracket: return "close_bracket";
         }
+
     }
 }
 

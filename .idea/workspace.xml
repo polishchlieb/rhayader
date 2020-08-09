@@ -9,8 +9,8 @@
       <config projectName="soviet" targetName="gmock" />
       <config projectName="soviet" targetName="soviet" />
       <config projectName="soviet" targetName="gtest_main" />
-      <config projectName="soviet" targetName="gmock_main" />
       <config projectName="soviet" targetName="soviet_test" />
+      <config projectName="soviet" targetName="gmock_main" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -48,16 +48,21 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="IgnoreLang" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/evaluator/values" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.soviet">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="soviet_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="soviet_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="soviet" RUN_TARGET_NAME="soviet_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -114,15 +119,16 @@
       <workItem from="1596826539835" duration="8768000" />
       <workItem from="1596841453533" duration="1263000" />
       <workItem from="1596888965742" duration="2997000" />
-      <workItem from="1596904992687" duration="13985000" />
+      <workItem from="1596904992687" duration="16780000" />
+      <workItem from="1596992133457" duration="3363000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596890344434">
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions" timestamp="1596993263720">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596890344434" />
+    <state x="435" y="200" width="800" height="684" key="#New_File_Extensions/0.27.1680.1023@0.27.1680.1023" timestamp="1596993263720" />
     <state x="298" y="196" width="1084" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596919068868">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -131,30 +137,30 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="557" y="339" width="556" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1680.1023@0.27.1680.1023" timestamp="1596485723169" />
-    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596576951462">
+    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596993475062">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596576951462" />
+    <state x="573" y="287" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596993475062" />
     <state x="880" y="422" width="304" height="501" key="EnvironmentVariablesDialog" timestamp="1596918716023">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="880" y="422" width="304" height="501" key="EnvironmentVariablesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596918716023" />
-    <state width="828" height="303" key="GridCell.Tab.0.bottom" timestamp="1596924012186">
+    <state width="1657" height="303" key="GridCell.Tab.0.bottom" timestamp="1596996236170">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="828" height="303" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012186" />
-    <state width="828" height="303" key="GridCell.Tab.0.center" timestamp="1596924012184">
+    <state width="1657" height="303" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1596996236170" />
+    <state width="1657" height="303" key="GridCell.Tab.0.center" timestamp="1596996236169">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="828" height="303" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012184" />
-    <state width="828" height="303" key="GridCell.Tab.0.left" timestamp="1596924012183">
+    <state width="1657" height="303" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1596996236169" />
+    <state width="1657" height="303" key="GridCell.Tab.0.left" timestamp="1596996236169">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="828" height="303" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012183" />
-    <state width="828" height="303" key="GridCell.Tab.0.right" timestamp="1596924012185">
+    <state width="1657" height="303" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1596996236169" />
+    <state width="1657" height="303" key="GridCell.Tab.0.right" timestamp="1596996236170">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="828" height="303" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596924012185" />
+    <state width="1657" height="303" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1596996236170" />
     <state width="1657" height="328" key="GridCell.Tab.1.bottom" timestamp="1596840656985">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
