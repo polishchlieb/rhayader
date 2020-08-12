@@ -10,10 +10,13 @@ namespace tokenizer {
         PendingTokenType type;
         std::string value;
 
+        PendingToken(PendingTokenType type, std::string&& value)
+            : type(type), value(std::move(value)) {}       
+
         Token toToken() {
             return Token{
                 applyPendingTokenType(this->type),
-                this->value
+                std::move(this->value)
             };
         }
 
