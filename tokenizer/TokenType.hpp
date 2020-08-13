@@ -6,6 +6,7 @@
 
 namespace tokenizer {
     enum class TokenType {
+        undefined, // use only when moving Token
         name,
         number,
         string,
@@ -19,6 +20,8 @@ namespace tokenizer {
 
     std::string dumpTokenType(const TokenType type) {
         switch (type) {
+            case TokenType::undefined:
+                throw std::runtime_error("token of type undefined may exists only while moving a token");
             case TokenType::name: return "name";
             case TokenType::number: return "number";
             case TokenType::string: return "string";
@@ -29,7 +32,6 @@ namespace tokenizer {
             case TokenType::open_bracket: return "open_bracket";
             case TokenType::close_bracket: return "close_bracket";
         }
-
     }
 }
 

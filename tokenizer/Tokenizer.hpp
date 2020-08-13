@@ -11,14 +11,19 @@ namespace tokenizer {
     class Tokenizer {
     public:
         std::vector<Token> tokenize(const std::string& line) {
+            // Token count is less than or equal the line's length
+            tokens.reserve(line.length());
+
             for (const char c : line) {
                 parseChar(c);
             }
 
-            if (!previous.isEmpty())
-                tokens.push_back(previous.toToken());
+            if (!previous.isEmpty()) {
+                // tokens.push_back(previous.toToken());
+                PendingToken::pushToken(tokens, previous);
+            }
 
-            return tokens;
+            return std::move(tokens);
         }
 
     private:
@@ -81,7 +86,8 @@ namespace tokenizer {
 
         void parseString(const char c) {
             if (c == '\'' || c == '"') {
-                tokens.push_back(previous.toToken());
+                // tokens.push_back(previous.toToken());
+                PendingToken::pushToken(tokens, previous);
                 previous.clear();
                 return;
             }
@@ -95,8 +101,8 @@ namespace tokenizer {
                 previous.value += c;
                 return;
             }
-
-            tokens.push_back(previous.toToken());
+            
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
@@ -108,43 +114,50 @@ namespace tokenizer {
                 return;
             }
 
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseAddOp(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseSubOp(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseMulOp(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseDivOp(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseOpenBracket(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseCloseBracket(const char c) {
-            tokens.push_back(previous.toToken());
+            // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
         }
