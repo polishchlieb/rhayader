@@ -16,7 +16,7 @@ int main() {
         }
 
         tokenizer::Tokenizer t;
-        const auto tokens = t.tokenize(input);
+        auto tokens = t.tokenize(input);
 
         std::cout << "Tokenizer output:" << std::endl;
         for (const auto& token : tokens) {
@@ -25,14 +25,14 @@ int main() {
         std::cout << "---------------------" << std::endl;
 
         parser::Parser p;
-        const auto rootNode = p.parse(tokens);
+        auto rootNode = p.parse(tokens);
         std::cout << "Parser output:" << std::endl;
         parser::dump(rootNode);
         std::cout << "---------------------" << std::endl;
 
         std::cout << "Evaluator output:" << std::endl;
         const auto value = evaluator::evaluate(rootNode);
-        std::cout << dumpValue(value) << std::endl << std::endl;
+        std::cout << evaluator::dumpValue(value) << std::endl << std::endl;
     }
 }
 

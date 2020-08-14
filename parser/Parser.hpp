@@ -6,11 +6,12 @@
 #include "nodes/nodes.hpp"
 #include <memory>
 #include <stack>
+#include <stdexcept>
 
 namespace parser {
     class Parser {
     public:
-        std::shared_ptr<Node> parse(const std::vector<tokenizer::Token>& tokens) {
+        std::shared_ptr<Node> parse(std::vector<tokenizer::Token>& tokens) {
             return parseInfixExpression(tokens);
         }
 
@@ -18,18 +19,18 @@ namespace parser {
         std::stack<tokenizer::Token> operatorStack;
         std::stack<std::shared_ptr<Node>> expressionStack;
 
-        std::shared_ptr<Node> parseInfixExpression(const std::vector<tokenizer::Token>& tokens) {
-            for (const auto& token : tokens) {
+        std::shared_ptr<Node> parseInfixExpression(std::vector<tokenizer::Token>& tokens) {
+            for (auto& token : tokens) {
                 if (token.type == tokenizer::TokenType::open_bracket) {
-                    operatorStack.push(token);
+                    operatorStack.push(std::move(token));
                 } else if (token.type == tokenizer::TokenType::number) {
                     const float value = std::stof(token.value);
-                    expressionStack.push(std::make_shared<NumberNode>(value));
+                    expressionStack.emplace(std::make_shared<NumberNode>(value));
                 } else if (isOperator(token)) {
                     while (!operatorStack.empty() && getOperatorPrecedence(operatorStack.top()) >= getOperatorPrecedence(token)) {
                         parseInfixOperator();
                     }
-                    operatorStack.push(token);
+                    operatorStack.push(std::move(token));
                 } else if (token.type == tokenizer::TokenType::close_bracket) {
                     while (operatorStack.top().type != tokenizer::TokenType::open_bracket) {
                         parseInfixOperator();
@@ -44,7 +45,8 @@ namespace parser {
 
             auto value = std::move(expressionStack.top());
             expressionStack.pop();
-            return value;
+
+            return std::move(value);
         }
 
         void parseInfixOperator() {
