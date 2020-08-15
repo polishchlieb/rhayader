@@ -15,7 +15,8 @@ namespace tokenizer {
         div_op,
         mul_op,
         open_bracket,
-        close_bracket
+        close_bracket,
+        equals_op
     };
 
     std::string dumpTokenType(const TokenType type) {
@@ -31,6 +32,7 @@ namespace tokenizer {
             case TokenType::mul_op: return "multiply_operator";
             case TokenType::open_bracket: return "open_bracket";
             case TokenType::close_bracket: return "close_bracket";
+            case TokenType::equals_op: return "equals_operator";
         }
     }
 }

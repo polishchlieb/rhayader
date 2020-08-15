@@ -43,6 +43,7 @@ namespace tokenizer {
                 case PendingTokenType::div_op: parseDivOp(c); break;
                 case PendingTokenType::open_bracket: parseOpenBracket(c); break;
                 case PendingTokenType::close_bracket: parseCloseBracket(c); break;
+                case PendingTokenType::equals_op: parseEqualsOp(c); break;
                 default:
                     throw std::runtime_error("not implemented (yet)");
             }
@@ -59,6 +60,7 @@ namespace tokenizer {
             if (c == '/') return PendingTokenType::div_op;
             if (c == '(') return PendingTokenType::open_bracket;
             if (c == ')') return PendingTokenType::close_bracket;
+            if (c == '=') return PendingTokenType::equals_op;
             return PendingTokenType::unknown;
         }
 
@@ -74,6 +76,7 @@ namespace tokenizer {
                 case PendingTokenType::unknown:
                 case PendingTokenType::open_bracket:
                 case PendingTokenType::close_bracket:
+                case PendingTokenType::equals_op:
                     previous.type = type;
                     previous.value += c;
                     break;
@@ -158,6 +161,12 @@ namespace tokenizer {
 
         void parseCloseBracket(const char c) {
             // tokens.push_back(previous.toToken());
+            PendingToken::pushToken(tokens, previous);
+            previous.clear();
+            parseChar(c);
+        }
+
+        void parseEqualsOp(const char c) {
             PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);
