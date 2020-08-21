@@ -17,10 +17,9 @@ namespace tokenizer {
         PendingToken(const PendingToken& other)
             : type(other.type), value(other.value) {}
 
-        PendingToken(PendingToken&& other) {
-            type = other.type;
+        PendingToken(PendingToken&& other)
+            : type(other.type), value(std::move(other.value)) {
             other.type = PendingTokenType::none;
-            value = std::move(other.value);
         }
 
         /* Token toToken() {

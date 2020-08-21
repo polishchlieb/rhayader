@@ -6,5 +6,7 @@
 #include "SubOpNode.hpp"
 #include "MulOpNode.hpp"
 #include "DivOpNode.hpp"
+#include "EqualsOpNode.hpp"
+#include "NameNode.hpp"
 
 #endif //SOVIET_NODES_HPP

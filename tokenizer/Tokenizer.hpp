@@ -44,6 +44,7 @@ namespace tokenizer {
                 case PendingTokenType::open_bracket: parseOpenBracket(c); break;
                 case PendingTokenType::close_bracket: parseCloseBracket(c); break;
                 case PendingTokenType::equals_op: parseEqualsOp(c); break;
+                case PendingTokenType::double_equals_op: parseDoubleEqualsOp(c); break;
                 default:
                     throw std::runtime_error("not implemented (yet)");
             }
@@ -167,6 +168,19 @@ namespace tokenizer {
         }
 
         void parseEqualsOp(const char c) {
+            const auto type = getType(c);
+            if (type == PendingTokenType::equals_op) {
+                previous.type = PendingTokenType::double_equals_op;
+                previous.value += c;
+                return;
+            }
+
+            PendingToken::pushToken(tokens, previous);
+            previous.clear();
+            parseChar(c);
+        }
+
+        void parseDoubleEqualsOp(const char c) {
             PendingToken::pushToken(tokens, previous);
             previous.clear();
             parseChar(c);

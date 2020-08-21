@@ -5,6 +5,8 @@
 #include <memory>
 #include <string>
 #include <iostream>
+#include "nodes/OperatorNode.hpp"
+#include "nodes/LeafNode.hpp"
 #include "node_cast.hpp"
 
 namespace parser {
@@ -15,16 +17,24 @@ namespace parser {
         return result;
     }
 
+    template<typename T>
+    static void dumpLeafNode(const std::shared_ptr<Node>& node, unsigned int spacing = 0) {
+        const auto& leafNode = node_cast<LeafNode<T>>(node);
+        std::cout << times(" ", 2 * spacing)
+            << dumpNodeType(node->type) << ": " << leafNode->value << std::endl;
+    }
+
     static void dump(const std::shared_ptr<Node>& node, unsigned int spacing = 0) {
         switch (node->type) {
             case NodeType::AddOpNode:
             case NodeType::SubOpNode:
             case NodeType::MulOpNode:
-            case NodeType::DivOpNode: {
+            case NodeType::DivOpNode:
+            case NodeType::EqualsOpNode: {
                 // all these node types have the same properties
                 // so we can cast any of them to another one
                 // AddOpNode here can be replaced with SubOpNode, etc.
-                const auto& operatorNode = node_cast<AddOpNode>(node);
+                const auto& operatorNode = node_cast<OperatorNode>(node);
 
                 std::cout << times(" ", 2 * spacing)
                           << dumpNodeType(node->type) << ":" << std::endl;
@@ -32,12 +42,12 @@ namespace parser {
                 dump(operatorNode->right, spacing + 2);
                 break;
             }
-            case NodeType::NumberNode: {
-                const auto& numberNode = node_cast<NumberNode>(node);
-                std::cout << times(" ", 2 * spacing)
-                    << dumpNodeType(node->type) << ": " << numberNode->value << std::endl;
+            case NodeType::NumberNode:
+                dumpLeafNode<float>(node, spacing);
                 break;
-            }
+            case NodeType::NameNode:
+                dumpLeafNode<std::string>(node, spacing);
+                break;
         }
     }
 }

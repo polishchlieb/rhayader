@@ -9,7 +9,9 @@ namespace parser {
         AddOpNode,
         SubOpNode,
         MulOpNode,
-        DivOpNode
+        DivOpNode,
+        EqualsOpNode,
+        NameNode
     };
 
     std::string dumpNodeType(const NodeType type) {
@@ -19,6 +21,8 @@ namespace parser {
             case NodeType::SubOpNode: return "substract_operator_node";
             case NodeType::MulOpNode: return "multiply_operator_node";
             case NodeType::DivOpNode: return "divide_operator_node";
+            case NodeType::EqualsOpNode: return "equals_operator_node";
+            case NodeType::NameNode: return "name_node";
         }
     }
 }

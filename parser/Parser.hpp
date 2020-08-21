@@ -26,6 +26,8 @@ namespace parser {
                 } else if (token.type == tokenizer::TokenType::number) {
                     const float value = std::stof(token.value);
                     expressionStack.emplace(std::make_shared<NumberNode>(value));
+                } else if (token.type == tokenizer::TokenType::name) {
+                    expressionStack.emplace(std::make_shared<NameNode>(std::move(token.value)));
                 } else if (isOperator(token)) {
                     while (!operatorStack.empty() && getOperatorPrecedence(operatorStack.top()) >= getOperatorPrecedence(token)) {
                         parseInfixOperator();
@@ -72,6 +74,9 @@ namespace parser {
                 case tokenizer::TokenType::div_op:
                     createOperatorExpression<DivOpNode>(std::move(e1), std::move(e2));
                     break;
+                case tokenizer::TokenType::equals_op:
+                    createOperatorExpression<EqualsOpNode>(std::move(e1), std::move(e2));
+                    break;
                 default: break;
             }
         }
@@ -89,19 +94,22 @@ namespace parser {
         static inline bool isOperator(const tokenizer::Token& token) {
             using tokenizer::TokenType;
             return token.type == TokenType::add_op || token.type == TokenType::sub_op
-                || token.type == TokenType::mul_op || token.type == TokenType::div_op;
+                || token.type == TokenType::mul_op || token.type == TokenType::div_op
+                || token.type == TokenType::equals_op;
         }
 
         static unsigned int getOperatorPrecedence(const tokenizer::Token& token) {
             switch (token.type) {
-                // number 1 or 2 here really doesn't matter, precedence for multiply
-                // operator just has to be greater than precedence for add operator
+                // numbers here really don't matter, precedence for multiply
+                // operator just has to be greater than precedence for add operator, etc.
                 case tokenizer::TokenType::add_op:
                 case tokenizer::TokenType::sub_op:
-                    return 1;
+                    return 2;
                 case tokenizer::TokenType::mul_op:
                 case tokenizer::TokenType::div_op:
-                    return 2;
+                    return 3;
+                case tokenizer::TokenType::equals_op:
+                    return 1;
                 case tokenizer::TokenType::open_bracket:
                     // this has to be the lowest
                     return 0;
