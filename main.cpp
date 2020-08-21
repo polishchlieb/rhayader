@@ -5,6 +5,8 @@
 #include "evaluator/dumpValue.hpp"
 
 int main() {
+    evaluator::Evaluator e;
+
     while (true) {
         std::cout << "Input: ";
         std::string input;
@@ -30,7 +32,6 @@ int main() {
         parser::dump(rootNode);
         std::cout << "---------------------" << std::endl;
 
-        evaluator::Evaluator e;
         std::cout << "Evaluator output:" << std::endl;
         const auto value = e.evaluate(rootNode);
         std::cout << evaluator::dumpValue(value) << std::endl << std::endl;
