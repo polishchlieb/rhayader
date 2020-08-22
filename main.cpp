@@ -1,8 +1,11 @@
 #include "tokenizer/Tokenizer.hpp"
 #include "parser/Parser.hpp"
-#include "parser/dumpNode.hpp"
 #include "evaluator/evaluator.hpp"
 #include "evaluator/dumpValue.hpp"
+
+#if DEBUG
+#include "parser/dumpNode.hpp"
+#endif
 
 int main() {
     tokenizer::Tokenizer t;
@@ -10,16 +13,24 @@ int main() {
     evaluator::Evaluator e;
 
     while (true) {
-        std::cout << "Input: ";
         std::string input;
+
+#if DEBUG
+        std::cout << "Input: ";
         std::getline(std::cin, input);
         std::cout << "---------------------" << std::endl;
+#else
+        std::cout << "> ";
+        std::getline(std::cin, input);
+#endif
 
         if (input == "exit") {
             break;
         }
 
+#if DEBUG
         auto tokens = t.tokenize(input);
+
         std::cout << "Tokenizer output:" << std::endl;
         for (const auto& token : tokens) {
             std::cout << "(" << tokenizer::dumpTokenType(token.type) << ") " << token.value << std::endl;
@@ -34,6 +45,14 @@ int main() {
         std::cout << "Evaluator output:" << std::endl;
         const auto value = e.evaluate(rootNode);
         std::cout << evaluator::dumpValue(value) << std::endl << std::endl;
+#else
+        auto tokens = t.tokenize(input);
+        const auto value = e.evaluate(
+            p.parse(tokens)
+        );
+
+        std::cout << evaluator::dumpValue(value) << std::endl;
+#endif
     }
 }
 
