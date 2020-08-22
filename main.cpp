@@ -4,6 +4,7 @@
 #include "evaluator/dumpValue.hpp"
 
 #if DEBUG
+#include "tokenizer/dumpTokens.hpp"
 #include "parser/dumpNode.hpp"
 #endif
 
@@ -30,11 +31,8 @@ int main() {
 
 #if DEBUG
         auto tokens = t.tokenize(input);
-
         std::cout << "Tokenizer output:" << std::endl;
-        for (const auto& token : tokens) {
-            std::cout << "(" << tokenizer::dumpTokenType(token.type) << ") " << token.value << std::endl;
-        }
+        tokenizer::dump(tokens);
         std::cout << "---------------------" << std::endl;
 
         auto rootNode = p.parse(tokens);
