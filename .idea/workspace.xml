@@ -61,6 +61,11 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="gmock" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -84,11 +89,6 @@
     <configuration name="soviet" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soviet" TARGET_NAME="soviet" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="soviet" RUN_TARGET_NAME="soviet">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -120,6 +120,7 @@
       <workItem from="1597095912622" duration="3289000" />
       <workItem from="1598015087749" duration="5099000" />
       <workItem from="1598049651814" duration="1342000" />
+      <workItem from="1598114633358" duration="5529000" />
     </task>
     <servers />
   </component>
@@ -144,22 +145,22 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="880" y="422" width="304" height="501" key="EnvironmentVariablesDialog/0.27.1680.1023@0.27.1680.1023" timestamp="1596918716023" />
-    <state width="1657" height="443" key="GridCell.Tab.0.bottom" timestamp="1598050993394">
+    <state width="1657" height="315" key="GridCell.Tab.0.bottom" timestamp="1598123725905">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="443" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1598050993394" />
-    <state width="1657" height="443" key="GridCell.Tab.0.center" timestamp="1598050993394">
+    <state width="1657" height="315" key="GridCell.Tab.0.bottom/0.27.1680.1023@0.27.1680.1023" timestamp="1598123725905" />
+    <state width="1657" height="315" key="GridCell.Tab.0.center" timestamp="1598123725904">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="443" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1598050993394" />
-    <state width="1657" height="443" key="GridCell.Tab.0.left" timestamp="1598050993394">
+    <state width="1657" height="315" key="GridCell.Tab.0.center/0.27.1680.1023@0.27.1680.1023" timestamp="1598123725904" />
+    <state width="1657" height="315" key="GridCell.Tab.0.left" timestamp="1598123725904">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="443" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1598050993394" />
-    <state width="1657" height="443" key="GridCell.Tab.0.right" timestamp="1598050993394">
+    <state width="1657" height="315" key="GridCell.Tab.0.left/0.27.1680.1023@0.27.1680.1023" timestamp="1598123725904" />
+    <state width="1657" height="315" key="GridCell.Tab.0.right" timestamp="1598123725905">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state width="1657" height="443" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1598050993394" />
+    <state width="1657" height="315" key="GridCell.Tab.0.right/0.27.1680.1023@0.27.1680.1023" timestamp="1598123725905" />
     <state width="1657" height="328" key="GridCell.Tab.1.bottom" timestamp="1596840656985">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>

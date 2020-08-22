@@ -14,10 +14,10 @@ namespace tokenizer {
         PendingToken(PendingTokenType type, std::string&& value)
             : type(type), value(std::move(value)) {}       
 
-        PendingToken(const PendingToken& other)
-            : type(other.type), value(other.value) {}
+//        PendingToken(const PendingToken& other)
+//            : type(other.type), value(other.value) {}
 
-        PendingToken(PendingToken&& other)
+        PendingToken(PendingToken&& other) noexcept
             : type(other.type), value(std::move(other.value)) {
             other.type = PendingTokenType::none;
         }
@@ -41,7 +41,7 @@ namespace tokenizer {
             this->value = "";
         }
 
-        bool isEmpty() const {
+        [[nodiscard]] bool isEmpty() const {
             return this->type == PendingTokenType::none;
         }
     };

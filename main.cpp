@@ -5,6 +5,8 @@
 #include "evaluator/dumpValue.hpp"
 
 int main() {
+    tokenizer::Tokenizer t;
+    parser::Parser p;
     evaluator::Evaluator e;
 
     while (true) {
@@ -17,16 +19,13 @@ int main() {
             break;
         }
 
-        tokenizer::Tokenizer t;
         auto tokens = t.tokenize(input);
-
         std::cout << "Tokenizer output:" << std::endl;
         for (const auto& token : tokens) {
             std::cout << "(" << tokenizer::dumpTokenType(token.type) << ") " << token.value << std::endl;
         }
         std::cout << "---------------------" << std::endl;
 
-        parser::Parser p;
         auto rootNode = p.parse(tokens);
         std::cout << "Parser output:" << std::endl;
         parser::dump(rootNode);

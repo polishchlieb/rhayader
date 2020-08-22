@@ -12,6 +12,9 @@ namespace tokenizer {
     class Tokenizer {
     public:
         std::vector<Token> tokenize(const std::string& line) {
+            // the vector may have been moved before
+            tokens = std::vector<Token>();
+
             // Token count is less than or equal the line's length
             tokens.reserve(line.length());
 
@@ -20,8 +23,8 @@ namespace tokenizer {
             }
 
             if (!previous.isEmpty()) {
-                // tokens.push_back(previous.toToken());
                 PendingToken::pushToken(tokens, previous);
+                previous.clear();
             }
 
             return std::move(tokens);
