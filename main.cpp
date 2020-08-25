@@ -1,9 +1,11 @@
+#define DEBUG
+
 #include "tokenizer/Tokenizer.hpp"
 #include "parser/Parser.hpp"
 #include "evaluator/evaluator.hpp"
 #include "evaluator/dumpValue.hpp"
 
-#if DEBUG
+#ifdef DEBUG
 #include "tokenizer/dumpTokens.hpp"
 #include "parser/dumpNode.hpp"
 #endif
@@ -16,7 +18,7 @@ int main() {
     while (true) {
         std::string input;
 
-#if DEBUG
+#ifdef DEBUG
         std::cout << "Input: ";
         std::getline(std::cin, input);
         std::cout << "---------------------" << std::endl;
@@ -29,7 +31,7 @@ int main() {
             break;
         }
 
-#if DEBUG
+#ifdef DEBUG
         auto tokens = t.tokenize(input);
         std::cout << "Tokenizer output:" << std::endl;
         tokenizer::dump(tokens);

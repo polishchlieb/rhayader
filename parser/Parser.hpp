@@ -77,6 +77,9 @@ namespace parser {
                 case tokenizer::TokenType::equals_op:
                     createOperatorExpression<EqualsOpNode>(std::move(e1), std::move(e2));
                     break;
+                case tokenizer::TokenType::double_equals_op:
+                    createOperatorExpression<DoubleEqualsOpNode>(std::move(e1), std::move(e2));
+                    break;
                 default: break;
             }
         }
@@ -95,7 +98,7 @@ namespace parser {
             using tokenizer::TokenType;
             return token.type == TokenType::add_op || token.type == TokenType::sub_op
                 || token.type == TokenType::mul_op || token.type == TokenType::div_op
-                || token.type == TokenType::equals_op;
+                || token.type == TokenType::equals_op || token.type == TokenType::double_equals_op;
         }
 
         static unsigned int getOperatorPrecedence(const tokenizer::Token& token) {
@@ -109,6 +112,7 @@ namespace parser {
                 case tokenizer::TokenType::div_op:
                     return 3;
                 case tokenizer::TokenType::equals_op:
+                case tokenizer::TokenType::double_equals_op:
                     return 1;
                 case tokenizer::TokenType::open_bracket:
                     // this has to be the lowest

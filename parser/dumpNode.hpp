@@ -30,10 +30,8 @@ namespace parser {
             case NodeType::SubOpNode:
             case NodeType::MulOpNode:
             case NodeType::DivOpNode:
-            case NodeType::EqualsOpNode: {
-                // all these node types have the same properties
-                // so we can cast any of them to another one
-                // AddOpNode here can be replaced with SubOpNode, etc.
+            case NodeType::EqualsOpNode:
+            case NodeType::DoubleEqualsOpNode: {
                 const auto& operatorNode = node_cast<OperatorNode>(node);
 
                 std::cout << times(" ", 2 * spacing)
