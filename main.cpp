@@ -1,5 +1,3 @@
-#define DEBUG
-
 #include "tokenizer/Tokenizer.hpp"
 #include "parser/Parser.hpp"
 #include "evaluator/evaluator.hpp"
