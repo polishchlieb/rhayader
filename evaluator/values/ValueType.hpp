@@ -3,7 +3,8 @@
 
 namespace evaluator {
     enum class ValueType {
-        NumberValue
+        NumberValue,
+        BooleanValue
     };
 }
 

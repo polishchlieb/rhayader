@@ -12,6 +12,10 @@ namespace evaluator {
                 const auto& v = value_cast<NumberValue>(value);
                 return std::to_string(v->value);
             }
+            case ValueType::BooleanValue: {
+                const auto& v = value_cast<BooleanValue>(value);
+                return v->value ? "true" : "false";
+            }
         }
     }
 }

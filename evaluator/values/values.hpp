@@ -6,5 +6,6 @@
 #include "../value_cast.hpp"
 
 #include "NumberValue.hpp"
+#include "BooleanValue.hpp"
 
 #endif //SOVIET_VALUES_HPP
