@@ -26,6 +26,8 @@ namespace evaluator {
                     return evaluateDivOpNode(node);
                 case parser::NodeType::EqualsOpNode:
                     return evaluateEqualsOpNode(node);
+                case parser::NodeType::DoubleEqualsOpNode:
+                    return evaluateDoubleEqualsOpNode(node);
                 default:
                     throw std::runtime_error("not implemented (yet)");
             }
@@ -80,6 +82,31 @@ namespace evaluator {
             const auto value = value_cast<NumberValue>(evaluate(n->right));
             variables[std::move(name->value)] = value;
             return value;
+        }
+
+        std::shared_ptr<Value> evaluateDoubleEqualsOpNode(const std::shared_ptr<parser::Node>& node) {
+            const auto& n = parser::node_cast<parser::DoubleEqualsOpNode>(node);
+            const auto left = evaluate(n->left);
+            const auto right = evaluate(n->right);
+            if (left->type != right->type)
+                return std::make_shared<BooleanValue>(false);
+
+            switch (left->type) {
+                case ValueType::NumberValue: {
+                    const auto leftNum = value_cast<NumberValue>(left);
+                    const auto rightNum = value_cast<NumberValue>(right);
+                    return std::make_shared<BooleanValue>(
+                        leftNum->value == rightNum->value
+                    );
+                }
+                case ValueType::BooleanValue: {
+                    const auto leftBool = value_cast<BooleanValue>(left);
+                    const auto rightBool = value_cast<BooleanValue>(right);
+                    return std::make_shared<BooleanValue>(
+                        leftBool->value == rightBool->value
+                    );
+                }
+            }
         }
     };
 }
