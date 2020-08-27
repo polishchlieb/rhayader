@@ -19,7 +19,8 @@ namespace tokenizer {
         open_bracket,
         close_bracket,
         equals_op,
-        double_equals_op
+        double_equals_op,
+        comma
     };
 
     std::string dumpPendingTokenType(const PendingTokenType type) {
@@ -37,6 +38,7 @@ namespace tokenizer {
             case PendingTokenType::close_bracket: return "close_bracket";
             case PendingTokenType::equals_op: return "equals_operator";
             case PendingTokenType::double_equals_op: return "double_equals_operator";
+            case PendingTokenType::comma: return "comma";
         }
     }
 
@@ -53,6 +55,7 @@ namespace tokenizer {
             case PendingTokenType::close_bracket: return TokenType::close_bracket;
             case PendingTokenType::equals_op: return TokenType::equals_op;
             case PendingTokenType::double_equals_op: return TokenType::double_equals_op;
+            case PendingTokenType::comma: return TokenType::comma;
             default:
                 throw std::runtime_error("Couldn't convert pending token type " + dumpPendingTokenType(type) + " to token type");
         }
