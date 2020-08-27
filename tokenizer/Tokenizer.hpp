@@ -7,15 +7,16 @@
 #include <stdexcept>
 #include "Token.hpp"
 #include "PendingToken.hpp"
+#include "Tokens.hpp"
 
 namespace tokenizer {
     class Tokenizer {
     public:
         std::vector<Token> tokenize(const std::string& line) {
-            // the vector may have been moved before
-            tokens = std::vector<Token>();
+            // tokens may have been moved before
+            tokens = Tokens();
 
-            // Token count is less than or equal the line's length
+            // token count is less than or equal the line's length
             tokens.reserve(line.length());
 
             for (const char c : line) {
@@ -23,7 +24,7 @@ namespace tokenizer {
             }
 
             if (!previous.isEmpty()) {
-                PendingToken::pushToken(tokens, previous);
+                tokens.add(previous);
                 previous.clear();
             }
 
@@ -31,7 +32,7 @@ namespace tokenizer {
         }
 
     private:
-        std::vector<Token> tokens;
+        Tokens tokens;
         PendingToken previous{PendingTokenType::none, ""};
 
         void parseChar(const char c) {
@@ -97,8 +98,7 @@ namespace tokenizer {
 
         void parseString(const char c) {
             if (c == '\'' || c == '"') {
-                // tokens.push_back(previous.toToken());
-                PendingToken::pushToken(tokens, previous);
+                tokens.add(previous);
                 previous.clear();
                 return;
             }
@@ -113,7 +113,7 @@ namespace tokenizer {
                 return;
             }
             
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
@@ -125,50 +125,43 @@ namespace tokenizer {
                 return;
             }
 
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseAddOp(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseSubOp(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseMulOp(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseDivOp(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseOpenBracket(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseCloseBracket(const char c) {
-            // tokens.push_back(previous.toToken());
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
@@ -181,19 +174,19 @@ namespace tokenizer {
                 return;
             }
 
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseDoubleEqualsOp(const char c) {
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
 
         void parseComma(const char c) {
-            PendingToken::pushToken(tokens, previous);
+            tokens.add(previous);
             previous.clear();
             parseChar(c);
         }
