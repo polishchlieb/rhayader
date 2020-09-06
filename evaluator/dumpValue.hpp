@@ -5,7 +5,7 @@
 #include <memory>
 #include "values/values.hpp"
 
-namespace evaluator {
+namespace soviet {
     std::string dumpValue(const std::shared_ptr<Value>& value) {
         switch (value->type) {
             case ValueType::NumberValue: {

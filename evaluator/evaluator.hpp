@@ -7,26 +7,26 @@
 #include "values/values.hpp"
 #include <unordered_map>
 
-namespace evaluator {
+namespace soviet {
     class Evaluator {
     public:
-        std::shared_ptr<Value> evaluate(const std::shared_ptr<parser::Node>& node) {
+        std::shared_ptr<Value> evaluate(const std::shared_ptr<Node>& node) {
             switch (node->type) {
-                case parser::NodeType::NumberNode:
+                case NodeType::NumberNode:
                     return evaluateNumberNode(node);
-                case parser::NodeType::NameNode:
+                case NodeType::NameNode:
                     return evaluateNameNode(node);
-                case parser::NodeType::AddOpNode:
+                case NodeType::AddOpNode:
                     return evaluateAddOpNode(node);
-                case parser::NodeType::SubOpNode:
+                case NodeType::SubOpNode:
                     return evaluateSubOpNode(node);
-                case parser::NodeType::MulOpNode:
+                case NodeType::MulOpNode:
                     return evaluateMulOpNode(node);
-                case parser::NodeType::DivOpNode:
+                case NodeType::DivOpNode:
                     return evaluateDivOpNode(node);
-                case parser::NodeType::EqualsOpNode:
+                case NodeType::EqualsOpNode:
                     return evaluateEqualsOpNode(node);
-                case parser::NodeType::DoubleEqualsOpNode:
+                case NodeType::DoubleEqualsOpNode:
                     return evaluateDoubleEqualsOpNode(node);
                 default:
                     throw std::runtime_error("not implemented (yet)");
@@ -36,56 +36,56 @@ namespace evaluator {
     private:
         std::unordered_map<std::string, std::shared_ptr<Value>> variables;
 
-        std::shared_ptr<Value> evaluateNumberNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::NumberNode>(node);
+        std::shared_ptr<Value> evaluateNumberNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<NumberNode>(node);
             return std::make_shared<NumberValue>(n->value);
         }
 
-        std::shared_ptr<Value> evaluateNameNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::NameNode>(node);
+        std::shared_ptr<Value> evaluateNameNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<NameNode>(node);
             if (!variables.contains(n->value))
                 throw std::runtime_error("unknown name: " + n->value);
             return variables[n->value];
         }
 
-        std::shared_ptr<Value> evaluateAddOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::AddOpNode>(node);
+        std::shared_ptr<Value> evaluateAddOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<AddOpNode>(node);
             const auto left = value_cast<NumberValue>(evaluate(n->left));
             const auto right = value_cast<NumberValue>(evaluate(n->right));
             return std::make_shared<NumberValue>(left->value + right->value);
         }
 
-        std::shared_ptr<Value> evaluateSubOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::SubOpNode>(node);
+        std::shared_ptr<Value> evaluateSubOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<SubOpNode>(node);
             const auto left = value_cast<NumberValue>(evaluate(n->left));
             const auto right = value_cast<NumberValue>(evaluate(n->right));
             return std::make_shared<NumberValue>(left->value - right->value);
         }
 
-        std::shared_ptr<Value> evaluateMulOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::DivOpNode>(node);
+        std::shared_ptr<Value> evaluateMulOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<DivOpNode>(node);
             const auto left = value_cast<NumberValue>(evaluate(n->left));
             const auto right = value_cast<NumberValue>(evaluate(n->right));
             return std::make_shared<NumberValue>(left->value * right->value);
         }
 
-        std::shared_ptr<Value> evaluateDivOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::DivOpNode>(node);
+        std::shared_ptr<Value> evaluateDivOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<DivOpNode>(node);
             const auto left = value_cast<NumberValue>(evaluate(n->left));
             const auto right = value_cast<NumberValue>(evaluate(n->right));
             return std::make_shared<NumberValue>(left->value / right->value);
         }
 
-        std::shared_ptr<Value> evaluateEqualsOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::EqualsOpNode>(node);
-            const auto name = parser::node_cast<parser::NameNode>(n->left);
+        std::shared_ptr<Value> evaluateEqualsOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<EqualsOpNode>(node);
+            const auto name = node_cast<NameNode>(n->left);
             const auto value = value_cast<NumberValue>(evaluate(n->right));
             variables[std::move(name->value)] = value;
             return value;
         }
 
-        std::shared_ptr<Value> evaluateDoubleEqualsOpNode(const std::shared_ptr<parser::Node>& node) {
-            const auto& n = parser::node_cast<parser::DoubleEqualsOpNode>(node);
+        std::shared_ptr<Value> evaluateDoubleEqualsOpNode(const std::shared_ptr<Node>& node) {
+            const auto& n = node_cast<DoubleEqualsOpNode>(node);
             const auto left = evaluate(n->left);
             const auto right = evaluate(n->right);
             if (left->type != right->type)

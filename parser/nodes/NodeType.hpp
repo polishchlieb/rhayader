@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace parser {
+namespace soviet {
     enum class NodeType {
         NumberNode,
         AddOpNode,

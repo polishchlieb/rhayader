@@ -1,7 +1,7 @@
 #ifndef SOVIET_VALUETYPE_HPP
 #define SOVIET_VALUETYPE_HPP
 
-namespace evaluator {
+namespace soviet {
     enum class ValueType {
         NumberValue,
         BooleanValue

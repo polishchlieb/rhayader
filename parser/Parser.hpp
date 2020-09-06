@@ -124,10 +124,10 @@
 //    };
 //}
 
-namespace parser {
+namespace soviet {
     class Parser {
     public:
-        Parser(std::vector<tokenizer::Token>&& tokens) {
+        Parser(std::vector<Token>&& tokens) {
             this->tokens = std::move(tokens);
         }
 
@@ -136,7 +136,7 @@ namespace parser {
         }
 
     private:
-        std::vector<tokenizer::Token> tokens;
+        std::vector<Token> tokens;
     };
 }
 

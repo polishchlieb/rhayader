@@ -9,7 +9,7 @@
 #include "PendingToken.hpp"
 #include "Tokens.hpp"
 
-namespace tokenizer {
+namespace soviet {
     class Tokenizer {
     public:
         std::vector<Token> tokenize(const std::string& line) {

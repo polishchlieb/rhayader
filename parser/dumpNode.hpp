@@ -9,7 +9,7 @@
 #include "nodes/LeafNode.hpp"
 #include "node_cast.hpp"
 
-namespace parser {
+namespace soviet {
     static std::string times(const std::string& str, unsigned int num) {
         std::string result;
         for (unsigned int i = 0; i < num; i++)
