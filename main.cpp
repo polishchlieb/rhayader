@@ -9,9 +9,9 @@
 #endif
 
 int main() {
-    soviet::Tokenizer t;
-    soviet::Parser p;
-    soviet::Evaluator e;
+    soviet::Tokenizer tokenizer;
+    soviet::Parser parser{tokenizer};
+    soviet::Evaluator evaluator;
 
     while (true) {
         std::string input;
@@ -44,12 +44,12 @@ int main() {
         const auto value = e.evaluate(rootNode);
         std::cout << soviet::dumpValue(value) << std::endl << std::endl;
 #else
-        auto tokens = t.tokenize(input);
-        const auto value = e.evaluate(
-            p.parse(tokens)
-        );
+        tokenizer.tokenize(input);
+        const auto value = evaluator.evaluate(parser.parse());
 
         std::cout << soviet::dumpValue(value) << std::endl;
+
+        tokenizer.clear();
 #endif
     }
 }

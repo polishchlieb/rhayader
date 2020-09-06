@@ -12,7 +12,7 @@
 namespace soviet {
     class Tokenizer {
     public:
-        std::vector<Token> tokenize(const std::string& line) {
+        void tokenize(const std::string& line) {
             // tokens may have been moved before
             tokens = Tokens();
 
@@ -27,12 +27,26 @@ namespace soviet {
                 tokens.add(previous);
                 previous.clear();
             }
-
-            return std::move(tokens);
         }
 
+        void clear() {
+            tokens = Tokens();
+            currentIndex = 0;
+        }
+
+        Token& getNextToken() {
+            return tokens[currentIndex++];
+        }
+
+        Token& getCurrentToken() {
+            return *currentToken;
+        }
     private:
         Tokens tokens;
+
+        Token* currentToken;
+        unsigned int currentIndex = 0;
+
         PendingToken previous{PendingTokenType::none, ""};
 
         void parseChar(const char c) {
