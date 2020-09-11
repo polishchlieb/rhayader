@@ -39,12 +39,11 @@ namespace soviet {
         }
 
         Token& getCurrentToken() {
-            return *currentToken;
+            return tokens[currentIndex];
         }
     private:
         Tokens tokens;
 
-        Token* currentToken;
         unsigned int currentIndex = 0;
 
         PendingToken previous{PendingTokenType::none, ""};

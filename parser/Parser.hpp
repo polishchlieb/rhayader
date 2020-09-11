@@ -14,7 +14,18 @@ namespace soviet {
         explicit Parser(Tokenizer& tokenizer) : tokenizer(tokenizer) {}
 
         std::shared_ptr<Node> parse() {
-            return std::shared_ptr<Node>();
+            switch (tokenizer.getCurrentToken().type) {
+                case TokenType::number:
+                    return parseNumber();
+            }
+        }
+
+        std::shared_ptr<Node> parseNumber() {
+             const auto result = std::make_shared<NumberNode>(
+                 std::stof(tokenizer.getCurrentToken().value)
+             );
+             tokenizer.getNextToken();
+             return result;
         }
 
     private:
