@@ -4,9 +4,14 @@
 #include "../tokenizer/Token.hpp"
 #include <vector>
 #include "nodes/nodes.hpp"
+#include "../tokenizer/Tokenizer.hpp"
 #include <memory>
 #include <stack>
 #include <stdexcept>
+
+#ifdef DEBUG
+#include <exception>
+#endif
 
 namespace soviet {
     class Parser {
@@ -17,6 +22,9 @@ namespace soviet {
             switch (tokenizer.getCurrentToken().type) {
                 case TokenType::number:
                     return parseNumber();
+                default:
+                    std::cout << "a.. ja mam to w dupie" << std::endl;
+                    return nullptr; // segfault eppek
             }
         }
 
@@ -30,6 +38,26 @@ namespace soviet {
 
     private:
         Tokenizer& tokenizer;
+        std::shared_ptr<Node> rootNode;
+
+        static int getOperatorPrecedence(Token& token) {
+            switch (token.type) {
+                case TokenType::add_op:
+                case TokenType::sub_op:
+                    return 1;
+                case TokenType::mul_op:
+                case TokenType::div_op:
+                    return 2;
+                default:
+                #ifdef DEBUG
+                    throw std::runtime_error(
+                        "Couldn't get precedence of token of type "
+                        + dumpTokenType(token.type)
+                    );
+                #endif
+                    return -1;
+            }
+        }
     };
 }
 
