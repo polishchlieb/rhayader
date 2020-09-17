@@ -10,7 +10,7 @@
 
 int main() {
     soviet::Tokenizer tokenizer;
-    soviet::Parser parser{tokenizer};
+    soviet::Parser parser;
     soviet::Evaluator evaluator;
 
     while (true) {
@@ -45,7 +45,8 @@ int main() {
         std::cout << soviet::dumpValue(value) << std::endl << std::endl;
 #else
         tokenizer.tokenize(input);
-        const auto value = evaluator.evaluate(parser.parse());
+        const auto rootNode = parser.parse(tokenizer.getIterator());
+        const auto value = evaluator.evaluate(rootNode);
 
         std::cout << soviet::dumpValue(value) << std::endl;
 

@@ -4,7 +4,7 @@
 #include "../tokenizer/Token.hpp"
 #include <vector>
 #include "nodes/nodes.hpp"
-#include "../tokenizer/Tokenizer.hpp"
+#include "TokenIterator.hpp"
 #include <memory>
 #include <stack>
 #include <stdexcept>
@@ -13,50 +13,81 @@
 #include <exception>
 #endif
 
+#include "../util/util.hpp"
+
 namespace soviet {
     class Parser {
     public:
-        explicit Parser(Tokenizer& tokenizer) : tokenizer(tokenizer) {}
-
-        std::shared_ptr<Node> parse() {
-            switch (tokenizer.getCurrentToken().type) {
-                case TokenType::number:
-                    return parseNumber();
-                default:
-                    std::cout << "a.. ja mam to w dupie" << std::endl;
-                    return nullptr; // segfault eppek
-            }
-        }
-
-        std::shared_ptr<Node> parseNumber() {
-             const auto result = std::make_shared<NumberNode>(
-                 std::stof(tokenizer.getCurrentToken().value)
-             );
-             tokenizer.getNextToken();
-             return result;
+        std::shared_ptr<Node> parse(TokenIterator&& iterator) {
+            this->iterator = std::move(iterator);
+            return this->parseExpression();
         }
 
     private:
-        Tokenizer& tokenizer;
-        std::shared_ptr<Node> rootNode;
+        TokenIterator iterator;
 
-        static int getOperatorPrecedence(Token& token) {
+        std::shared_ptr<Node> parseExpression() {
+            return this->parseAdditive();
+        }
+
+        std::shared_ptr<Node> parsePrimary() {
+            auto& token = this->iterator.getNextToken();
             switch (token.type) {
-                case TokenType::add_op:
-                case TokenType::sub_op:
-                    return 1;
-                case TokenType::mul_op:
-                case TokenType::div_op:
-                    return 2;
-                default:
-                #ifdef DEBUG
-                    throw std::runtime_error(
-                        "Couldn't get precedence of token of type "
-                        + dumpTokenType(token.type)
+                case TokenType::open_bracket: {
+                    const auto operand = this->parseExpression();
+                    this->iterator.getNextToken(); // eat )
+                    return operand;
+                }
+                case TokenType::number:
+                    return std::make_shared<NumberNode>(
+                        std::stof(token.value)
                     );
-                #endif
-                    return -1;
+                case TokenType::name:
+                    return std::make_shared<NameNode>(
+                        std::move(token.value)
+                    );
+                default:
+                    throw std::runtime_error(
+                        "parsePrimary was called with token of type "
+                            + dumpTokenType(token.type)
+                            + " which is not defined"
+                    );
             }
+        }
+
+        std::shared_ptr<Node> parseAdditive() {
+            auto operand1 = this->parseMultiplicative();
+            while (isIn(
+                iterator.peekNextToken().type,
+                TokenType::add_op, TokenType::sub_op
+            )) {
+                const auto op = iterator.getNextToken();
+                auto operand2 = parseMultiplicative();
+                // todo: handle substract operator
+                operand1 = std::make_shared<AddOpNode>(
+                    std::move(operand1),
+                    std::move(operand2)
+                );
+            }
+            return operand1;
+        }
+
+        std::shared_ptr<Node> parseMultiplicative() {
+            auto operand1 = this->parsePrimary();
+
+            while (isIn(
+                iterator.peekNextToken().type,
+                TokenType::mul_op, TokenType::div_op
+            )) {
+                const auto op = iterator.getNextToken();
+                auto operand2 = parsePrimary();
+                // todo: handle divide operator
+                operand1 = std::make_shared<MulOpNode>(
+                    std::move(operand1),
+                    std::move(operand2)
+                );
+            }
+            return operand1;
         }
     };
 }
