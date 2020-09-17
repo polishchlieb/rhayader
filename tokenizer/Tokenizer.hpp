@@ -8,6 +8,7 @@
 #include "Token.hpp"
 #include "PendingToken.hpp"
 #include "Tokens.hpp"
+#include "../parser/TokenIterator.hpp"
 
 namespace soviet {
     class Tokenizer {
@@ -31,21 +32,13 @@ namespace soviet {
 
         void clear() {
             tokens = Tokens();
-            currentIndex = 0;
         }
 
-        Token& getNextToken() {
-            return tokens[currentIndex++];
-        }
-
-        Token& getCurrentToken() {
-            return tokens[currentIndex];
+        TokenIterator getIterator() {
+            return TokenIterator{std::move(tokens)};
         }
     private:
         Tokens tokens;
-
-        unsigned int currentIndex = 0;
-
         PendingToken previous{PendingTokenType::none, ""};
 
         void parseChar(const char c) {
