@@ -16,6 +16,12 @@ namespace soviet {
                 const auto& v = value_cast<BooleanValue>(value);
                 return v->value ? "true" : "false";
             }
+            case ValueType::StringValue: {
+                const auto& v = value_cast<StringValue>(value);
+                return v->value;
+            }
+            case ValueType::UndefinedValue:
+                return "";
         }
     }
 }

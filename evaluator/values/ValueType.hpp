@@ -4,7 +4,9 @@
 namespace soviet {
     enum class ValueType {
         NumberValue,
-        BooleanValue
+        BooleanValue,
+        StringValue,
+        UndefinedValue
     };
 }
 

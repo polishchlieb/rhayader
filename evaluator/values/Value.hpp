@@ -6,6 +6,8 @@
 namespace soviet {
     struct Value {
         ValueType type;
+
+        explicit Value(ValueType type) : type(type) {}
     };
 }
 
