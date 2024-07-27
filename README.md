@@ -1,16 +1,16 @@
 # rhayader
 Functional programming language interpreter written in C++
 
-# Building
+## Building
 Use CMake to build, for example (on Linux with gcc):
 - `cmake`
 - `make`
 
-# Running
+## Running
 - `rhayader (file name)` to run a file
 - `rhayader` to use REPL (Really Epic Program Launcher)
 
-# FizzBuzz
+## FizzBuzz
 ```
 for i in Array.range(1, 101) {
   if Math.mod(i, 15) == 0
