@@ -1,0 +1,10 @@
+.vs/
+Debug/
+lib/
+x64/
+Release/
+
+rhayader.sln
+rhayader.vcxproj
+rhayader.vcxproj.filters
+rhayader.vcxproj.user
