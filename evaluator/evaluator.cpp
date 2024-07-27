@@ -1,7 +1,7 @@
 #include "evaluator.hpp"
 #include <fstream>
 #include "../FileReader.hpp"
-#if defined(_WIN32)
+#if defined(WIN32)
 #include <Windows.h>
 #endif
 #include <filesystem>
@@ -138,8 +138,7 @@ namespace rhayader {
 		if (n->importType == ImportType::dll) {
 #if defined(WIN32)
 			std::filesystem::path filepath = std::filesystem::current_path() / n->moduleName;
-
-			HINSTANCE handle = LoadLibrary((LPCWSTR) filepath.c_str());
+			HINSTANCE handle = LoadLibrary((LPCSTR) filepath.c_str());
 			if (!handle)
 				throw EvaluateError("couldn't load c library");
 			
