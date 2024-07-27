@@ -4,7 +4,12 @@ lib/
 x64/
 Release/
 
-rhayader.sln
-rhayader.vcxproj
-rhayader.vcxproj.filters
-rhayader.vcxproj.user
+Makefile
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
