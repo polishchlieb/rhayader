@@ -3,7 +3,7 @@ Functional programming language interpreter written in C++
 
 ## Building
 Use CMake to build, for example (on Linux with gcc):
-- `cmake`
+- `cmake .`
 - `make`
 
 ## Running
