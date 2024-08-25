@@ -15,6 +15,7 @@ public:
 	bool ok();
 
 private:
+	std::string line = "";
 	std::string previousLine = "";
 	std::ifstream file;
 	rhayader::Evaluator& evaluator;

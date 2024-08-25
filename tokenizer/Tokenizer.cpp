@@ -88,6 +88,7 @@ namespace rhayader {
 			case ':': return TokenType::colon;
 			case '|': return TokenType::or_op;
 			case '&': return TokenType::and_op;
+			case '\r': return TokenType::none;
 		}
 		return TokenType::unknown;
 	}
