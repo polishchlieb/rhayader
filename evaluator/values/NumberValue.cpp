@@ -33,7 +33,7 @@ namespace rhayader {
 	}
 
 	bool NumberValue::isInt() const {
-		return std::ceilf(value) == value;
+		return std::ceil(value) == value;
 	}
 
 	std::shared_ptr<rhayader::Value> NumberValue::add(const std::shared_ptr<Value>& right) {

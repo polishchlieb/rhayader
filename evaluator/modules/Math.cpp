@@ -1,6 +1,7 @@
 #include "Math.hpp"
 #include "../EvaluateError.hpp"
 #include <random>
+#include <cmath>
 
 namespace rhayader {
     MathModule::MathModule(Evaluator& evaluator) : ModuleValue{evaluator, "Math"} {
@@ -84,16 +85,16 @@ namespace rhayader {
 
     std::shared_ptr<Value> MathModule::round(Evaluator&, std::vector<std::shared_ptr<Value>>& args) {
         const auto num = valueCast<NumberValue>(args[0])->value;
-        return std::make_shared<NumberValue>(std::floorf(num + 0.5f));
+        return std::make_shared<NumberValue>(std::floor(num + 0.5f));
     }
 
     std::shared_ptr<Value> MathModule::floor(Evaluator&, std::vector<std::shared_ptr<Value>>& args) {
         const auto num = valueCast<NumberValue>(args[0])->value;
-        return std::make_shared<NumberValue>(std::floorf(num));
+        return std::make_shared<NumberValue>(std::floor(num));
     }
 
     std::shared_ptr<Value> MathModule::ceil(Evaluator&, std::vector<std::shared_ptr<Value>>& args) {
         const auto num = valueCast<NumberValue>(args[0])->value;
-        return std::make_shared<NumberValue>(std::ceilf(num));
+        return std::make_shared<NumberValue>(std::ceil(num));
     }
 }
