@@ -52,9 +52,9 @@ namespace rhayader {
 	std::shared_ptr<rhayader::Value> StringValue::add(const std::shared_ptr<Value>& right) {
 		switch (right->type) {
 			case ValueType::NumberValue: {
-				const auto rightValue = valueCast<NumberValue>(right)->value;
+				const auto rightNum = valueCast<NumberValue>(right);
 				return std::make_shared<StringValue>(
-					value + std::to_string(rightValue)
+					value + rightNum->dump()
 				);
 			}
 			case ValueType::StringValue: {

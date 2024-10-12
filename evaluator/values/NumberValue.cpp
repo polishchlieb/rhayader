@@ -45,7 +45,7 @@ namespace rhayader {
 			case ValueType::StringValue: {
 				const auto& rightValue = valueCast<StringValue>(right)->value;
 				return std::make_shared<StringValue>(
-					std::to_string(value) + rightValue
+					dump() + rightValue
 				);
 			}
 		}
