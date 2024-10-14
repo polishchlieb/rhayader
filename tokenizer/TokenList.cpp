@@ -6,11 +6,11 @@ namespace rhayader {
 	{}
 
 	void TokenList::dump() {
-		std::queue<Token> copy = tokens;
-		while (!copy.empty()) {
-			Token token = copy.front();
-			copy.pop();
-			std::cout << "(" << dumpTokenType(token.type) << ") " << token.value << std::endl;
+		while (!tokens.empty()) {
+			Token token = tokens.front();
+			tokens.pop();
+			std::cout << token.line << ": (" << dumpTokenType(token.type) << ") "
+				<< token.value << std::endl;
 		}
 	}
 

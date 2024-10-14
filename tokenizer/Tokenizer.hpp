@@ -14,6 +14,7 @@ namespace rhayader {
     public:
         void tokenize(const std::string& line);
         TokenList getTokens();
+        void dumpTokens() const;
 
     private:
         std::queue<Token> tokens;

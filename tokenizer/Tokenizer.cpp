@@ -24,6 +24,10 @@ namespace rhayader {
 		return TokenList{std::move(tokens)};
 	}
 
+	void Tokenizer::dumpTokens() const {
+		TokenList{tokens}.dump();
+	}
+
 	void Tokenizer::parseChar(const char c) {
 		switch (previous.type) {
 			case TokenType::none: parseNone(c); break;
