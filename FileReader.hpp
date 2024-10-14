@@ -15,8 +15,9 @@ public:
 	bool ok();
 
 private:
-	std::string line = "";
-	std::string previousLine = "";
+	rhayader::Tokenizer tokenizer;
+
+	std::string line, previousLine;
 	std::ifstream file;
 	rhayader::Evaluator& evaluator;
 

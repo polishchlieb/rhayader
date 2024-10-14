@@ -3,8 +3,6 @@
 #include <string>
 
 namespace rhayader {
-    static constexpr unsigned int UNDEFINED_LINE = 0;
-
     struct Token {
         TokenType type;
         std::string value;
@@ -17,6 +15,6 @@ namespace rhayader {
         Token& operator=(const Token& t) = default;
 
         bool isEmpty() const;
-        void clear(unsigned int line);
+        void clear(unsigned int lineNumber);
     };
 }

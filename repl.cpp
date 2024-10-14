@@ -2,7 +2,8 @@
 
 static rhayader::Thread mainThread;
 
-std::string previousLine = "";
+std::string previousLine;
+rhayader::Tokenizer tokenizer;
 
 void getline() {
 	std::cout << ">>> ";
@@ -11,7 +12,6 @@ void getline() {
 	std::getline(std::cin, line);
 	line = previousLine + line;
 
-	rhayader::Tokenizer tokenizer;
 	try {
 		tokenizer.tokenize(line);
 	} catch (const rhayader::Error& error) {

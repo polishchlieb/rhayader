@@ -17,18 +17,18 @@ int main(int argc, char** argv) {
 		while (true) {
 			getline();
 		}
-	} else {
-		rhayader::Thread thread;
-
-		std::string fileName = argv[1];
-		FileReader reader{fileName, *thread.evaluator};
-
-		if (!reader.ok()) {
-			std::cerr << "couldn't open the file" << std::endl;
-			return 1;
-		}
-
-		reader.execute();
 	}
+
+	rhayader::Thread thread;
+
+	std::string fileName = argv[1];
+	FileReader reader{fileName, *thread.evaluator};
+
+	if (!reader.ok()) {
+		std::cerr << "couldn't open the file" << std::endl;
+		return 1;
+	}
+
+	reader.execute();
 #endif
 }

@@ -18,7 +18,6 @@ bool FileReader::ok() {
 void FileReader::readLine() {
 	line = previousLine + line;
 
-	rhayader::Tokenizer tokenizer;
 	try {
 		tokenizer.tokenize(line);
 	} catch (const rhayader::Error& error) {

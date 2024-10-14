@@ -5,7 +5,7 @@ namespace rhayader {
 	Token::Token(Token&& other) noexcept
 		: type(std::exchange(other.type, TokenType::undefined)),
 		  value(std::move(other.value)),
-		  line(std::exchange(other.line, UNDEFINED_LINE))
+		  line(std::exchange(other.line, 0))
 	{}
 
 	Token::Token(TokenType type, std::string value, unsigned int line)
@@ -16,9 +16,9 @@ namespace rhayader {
 		return this->type == TokenType::none;
 	}
 
-	void Token::clear(unsigned int line) {
+	void Token::clear(unsigned int lineNumber) {
 		this->type = TokenType::none;
 		this->value = "";
-		this->line = line;
+		this->line = lineNumber;
 	}
 }

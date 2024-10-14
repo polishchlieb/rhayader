@@ -18,8 +18,8 @@ namespace rhayader {
 
     private:
         std::queue<Token> tokens;
-        unsigned int lineNumber = UNDEFINED_LINE;
-        Token previous{TokenType::none, "", UNDEFINED_LINE};
+        unsigned int lineNumber = 0;
+        Token previous{TokenType::none, "", 0};
 
         void parseChar(const char c);
 
