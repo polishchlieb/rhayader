@@ -129,8 +129,11 @@ namespace rhayader {
 	}
 
 	std::shared_ptr<Node> Parser::parseNumber() {
+		auto token = tokens.getNextToken();
+
 		auto result = std::make_shared<NumberNode>(
-			std::stof(tokens.getNextToken().value)
+			std::stof(token.value),
+			token.line
 		);
 
 		return result;

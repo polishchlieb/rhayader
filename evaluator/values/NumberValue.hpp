@@ -13,7 +13,9 @@ namespace rhayader {
     class NumberValue : public Value {
     public:
         float value;
+        unsigned int line = 0;
         explicit NumberValue(float value);
+        NumberValue(float value, unsigned int line);
 
         bool equals(const std::shared_ptr<Value>& other) override;
         std::shared_ptr<Value> clone() override;

@@ -67,8 +67,10 @@ namespace rhayader {
 	};
 
 	struct NumberNode : Node {
+		unsigned int line = 0;
 		float value;
 		explicit NumberNode(float value);
+		NumberNode(float value, unsigned int line);
 	};
 
 	struct BlockNode : Node {

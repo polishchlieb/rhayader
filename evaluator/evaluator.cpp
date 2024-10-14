@@ -262,7 +262,7 @@ namespace rhayader {
 
 	std::shared_ptr<Value> Evaluator::evaluateNumberNode(const std::shared_ptr<Node>& node) {
 		const auto& n = nodeCast<NumberNode>(node);
-		return std::make_shared<NumberValue>(n->value);
+		return std::make_shared<NumberValue>(n->value, n->line);
 	}
 
 	std::shared_ptr<Value> Evaluator::evaluateReturnNode(const std::shared_ptr<Node>& node) {

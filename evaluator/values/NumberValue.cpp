@@ -13,6 +13,10 @@ namespace rhayader {
 	NumberValue::NumberValue(float value)
 		: Value{ValueType::NumberValue}, value(value) {}
 
+	NumberValue::NumberValue(float value, unsigned int line)
+		: Value{ValueType::NumberValue}, value(value), line(line) {}
+
+
 	bool NumberValue::equals(const std::shared_ptr<Value>& right) {
 		if (right->type != this->type)
 			return false;
@@ -50,7 +54,7 @@ namespace rhayader {
 			}
 		}
 
-		throw EvaluateError{"unknown operands"};
+		throw EvaluateError{"unknown operands in line " + std::to_string(line)};
 	}
 
 	std::shared_ptr<rhayader::Value> NumberValue::multiply(const std::shared_ptr<Value>& right) {

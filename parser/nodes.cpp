@@ -56,6 +56,9 @@ namespace rhayader {
 		: Node{NodeType::NumberNode}, value(value)
 	{}
 
+	NumberNode::NumberNode(float value, unsigned int line)
+		: Node{NodeType::NumberNode}, value(value), line(line) {}
+
 	BlockNode::BlockNode(std::vector<std::shared_ptr<Node>> nodes)
 		: Node{NodeType::BlockNode}, nodes(std::move(nodes))
 	{}
